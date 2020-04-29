@@ -9,6 +9,6 @@ public class Water extends Pokemon
 		level = l;
 		type = "water";
 		weak = new String[]{"ice","grass"};
-		strength = new String[]{"fire"."ground"};
+		strength = new String[]{"fire","ground"};
 	}
 }

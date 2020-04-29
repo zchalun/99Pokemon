@@ -28,7 +28,7 @@ public abstract class Food {
 		return ID;
 	}
 	
-    public void setID(String id)
+    public void setID(int id)
     {
     	this.ID = id;
     }
