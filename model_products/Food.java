@@ -10,7 +10,7 @@ public abstract class Food {
 	protected String flavor; //product flavor
 	protected String[] type; //array of pokemon types compatible
 	protected double price; //product price
-	protected String ID; // product ID
+	protected int ID; // product ID
 	protected String desc; //product description
 	
 	
@@ -24,7 +24,7 @@ public abstract class Food {
 		return name;
 	}
 	
-	public String getID() {
+	public int getID() {
 		return ID;
 	}
 	
