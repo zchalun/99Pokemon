@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import javax.swing.JButton;
 
 public class MainMenu extends JFrame {
 
@@ -50,10 +51,23 @@ public class MainMenu extends JFrame {
 		JLabel logo = new JLabel("");
 		java.awt.Image logoimage = new ImageIcon("99-Pok.png").getImage();
 		panel.setLayout(null);
-		panel.add(logo); 
-		logo.setForeground(Color.WHITE);
+		panel.add(logo);
 		logo.setIcon(new ImageIcon(logoimage));
 		logo.setBounds(0, 0, 240, 94);
+		
+		JButton Advertisement = new JButton("");
+		java.awt.Image ad = new ImageIcon("Ad.png").getImage();
+		Advertisement.setBounds(240, 0, 720, 94);
+		panel.add(Advertisement);
+		Advertisement.setBackground(new java.awt.Color(36,104,177));
+		Advertisement.setIcon(new ImageIcon(ad));
+		
+		JButton Login = new JButton("");
+		java.awt.Image login = new ImageIcon("Login.png").getImage();
+		Login.setBounds(960, 0, 240, 94);
+		panel.add(Login);
+		Login.setBackground(new java.awt.Color(36,104,177));
+		Login.setIcon(new ImageIcon(login));
 		
 	}
 }
