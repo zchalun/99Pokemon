@@ -43,6 +43,7 @@ public class MainMenu extends JFrame {
 		setBounds(0, 0, 1200, 750);
 		getContentPane().setLayout(null);
 		
+		//HEADERS
 		JPanel panel = new JPanel();
 		getContentPane().add(panel);
 		panel.setBounds(0, 0, 1200, 94);
@@ -68,6 +69,21 @@ public class MainMenu extends JFrame {
 		panel.add(Login);
 		Login.setBackground(new java.awt.Color(36,104,177));
 		Login.setIcon(new ImageIcon(login));
+		
+		//MENU BUTTONS (wip)
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(0, 94, 1200, 58);
+		getContentPane().add(panel_1);
+		
+		JButton Home = new JButton("Home");
+		panel_1.add(Home);
+		Home.setBounds(0, 94, 240, 58);
+		panel.add(Home);
+		Home.setBackground(Color.WHITE);
+		java.awt.Image home = new ImageIcon("Home.png").getImage();
+		Home.setIcon(new ImageIcon(home));
+		
+		
 		
 	}
 }
