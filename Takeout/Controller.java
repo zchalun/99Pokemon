@@ -1,35 +1,22 @@
 package Takeout;
-
-
-/**
- * Write a description of class Controller here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class Controller
-{
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Controller
-     */
-    public Controller()
-    {
-        // initialise instance variables
-        x = 0;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class Controller {
+    private Model model;
+    private View view;
+    Controller(Model mmodel, View vview) {
+        model = mmodel;
+        view = vview;
+        //add actionListeners
+        view.addLoginListener(new LoginListener());
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    //actionListener methods
+    class LoginListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            model.setUsername(view.getUsername());
+            model.setPassword(view.getPassword());
+            //view.switchCard
+        }
     }
 }

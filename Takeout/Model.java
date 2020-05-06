@@ -12,8 +12,14 @@ public class Model {
     
     String name;
     ArrayList<List<String>> takeoutDB;
-    Model(String username, String password) {
+    Model() {
+    }
+    
+    public void setUsername(String username) {
         this.username = username;
+    }
+    
+    public void setPassword(String password) {
         this.password = password;
     }
     
