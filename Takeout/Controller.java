@@ -16,7 +16,6 @@ public class Controller {
         public void actionPerformed(ActionEvent e) {
             model.setUsername(view.getUsername());
             model.setPassword(view.getPassword());
-            //view.switchCard
         }
     }
 }
