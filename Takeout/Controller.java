@@ -16,6 +16,10 @@ public class Controller {
         public void actionPerformed(ActionEvent e) {
             model.setUsername(view.getUsername());
             model.setPassword(view.getPassword());
+            model.retrieveData();
+            if (model.connectionAlive()) {
+                view.switchCard("table");
+            }   
         }
     }
 }

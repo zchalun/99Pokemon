@@ -53,6 +53,17 @@ public class Model {
         }
     }
     
+    public boolean connectionAlive() {
+        try {
+            if (connection.isValid(5)) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+    
     public ArrayList<List<String>> getData() {
         return takeoutDB;
     }
