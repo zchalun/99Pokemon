@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainMenu extends JFrame {
 
@@ -70,7 +72,16 @@ public class MainMenu extends JFrame {
 		Login.setBackground(new java.awt.Color(36,104,177));
 		Login.setIcon(new ImageIcon(login));
 		
-		//MENU BUTTONS (wip)
+		JButton btnReservationTest = new JButton("reservation test");
+		btnReservationTest.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Reservations.ReservationsGUI.java
+			}
+		});
+		btnReservationTest.setBounds(172, 393, 195, 129);
+		getContentPane().add(btnReservationTest);
+		
+		/*//MENU BUTTONS (wip)
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(0, 94, 1200, 58);
 		getContentPane().add(panel_1);
@@ -82,7 +93,7 @@ public class MainMenu extends JFrame {
 		Home.setBackground(Color.WHITE);
 		java.awt.Image home = new ImageIcon("Home.png").getImage();
 		Home.setIcon(new ImageIcon(home));
-		
+		*/
 		
 		
 	}

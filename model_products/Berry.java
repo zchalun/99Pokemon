@@ -8,7 +8,16 @@ public class Berry extends Food{
 		flavor = "sweet"; //product flavor
 		type = new String[]{"bug", "electric", "fighting", "fire", "ghost", "grass", "ground", "ice", "normal", "poison", "water"}; //array of pokemon types compatible
 		price = 5.0; //product price
-		ID = 1; // product ID
+		ID = 0; // product ID
 		desc = "restores 10 HP";
+	}
+	public Berry(String n, String f, double p, int i, String d)
+	{
+		name = n; // product name
+		flavor = f; //product flavor
+		type = new String[]{"bug", "electric", "fighting", "fire", "ghost", "grass", "ground", "ice", "normal", "poison", "water"}; //array of pokemon types compatible
+		price = p; //product price
+		ID = i; // product ID
+		desc = d;
 	}
 }
