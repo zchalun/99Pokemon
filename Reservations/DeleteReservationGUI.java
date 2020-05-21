@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class SearchReservationGUI extends JFrame {
+public class DeleteReservationGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -26,7 +26,7 @@ public class SearchReservationGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					SearchReservationGUI frame = new SearchReservationGUI();
+					DeleteReservationGUI frame = new DeleteReservationGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,9 +38,9 @@ public class SearchReservationGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public SearchReservationGUI() {
+	public DeleteReservationGUI() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 461, 315);
+		setBounds(100, 100, 461, 259);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -60,23 +60,23 @@ public class SearchReservationGUI extends JFrame {
 		contentPane.add(password_input);
 		password_input.setColumns(10);
 		
-		JButton buttonSearch = new JButton("Search");
-		buttonSearch.addActionListener(new ActionListener() {
+		JButton buttonDelete = new JButton("Delete");
+		buttonDelete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// call viewReservation
-				result.setText(					                          // Set return value of call to viewReservation
-						ManageReservations.driverView(			          // Call viewReservation via driverView
+				// call deleteReservation
+				result.setText(					                          // Set return value of call to deleteReservation
+						ManageReservations.driverDelete(			      // Call DeleteReservation via driverDelete
 								name_input.getText(),                     // Get name from user input ^
 								password_input.getText()));               // get password from user input ^
 			}  
 
 		});
-		buttonSearch.setBounds(142, 107, 145, 29);
-		contentPane.add(buttonSearch);
+		buttonDelete.setBounds(145, 107, 145, 29);
+		contentPane.add(buttonDelete);
 		
 		result = new JTextField();
 		result.setEditable(false);
-		result.setBounds(6, 146, 438, 47);
+		result.setBounds(6, 146, 438, 73);
 		contentPane.add(result);
 		result.setColumns(10);
 		

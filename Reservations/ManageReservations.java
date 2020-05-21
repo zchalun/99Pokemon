@@ -31,11 +31,11 @@ public class ManageReservations
 	 */
     public String viewReservations(String n, String a)
     {
-    	//Reservations.add(addReservations("Zhang",3,"12:30 PM","password"));
-    	for (Reservation x : Reservations)
+    	//Reservations.add(addReservations("Zhang",3,"12:30 PM","password")); //sample Reservation entry for testing
+    	/*for (Reservation x : Reservations)
     	{
     		System.out.println(x.toString());
-    	}
+    	}*/
     	for (Reservation x : Reservations)
     	{
     		if (x.getName().contentEquals(n) && x.getAccessPassword().contentEquals(a))
@@ -61,8 +61,10 @@ public class ManageReservations
      * @param a access password
      * @return whether reservation was successfully removed
      */
-    public String deleteReservations(String n, String a)
+    public String deleteReservation(String n, String a)
     {
+    	Reservations.add(addReservations("Zhang",3,"12:30 PM","password")); //sample Reservation entry for testing
+
     	for (int i = 0; i<Reservations.size(); i++)
     	{
     		Reservation x = Reservations.get(i);
@@ -78,19 +80,26 @@ public class ManageReservations
     	}
     	return "no reservation found.";
     }
+    public static String driverDelete(String n, String a)
+    {
+    	ManageReservations temp = new ManageReservations();
+    	return temp.deleteReservation(n,a);
+    }
+    
     /**
      * @param n name reservation is under
      * @param a access password
      * @return whether time was successfully changed
      */
-    public String changeTime(String n, String a)
+    public String changeTime(String n, String a, String t)
     {
+    	//Reservations.add(addReservations("Zhang",3,"12:30 PM","password")); //sample Reservation entry for testing
     	for (int i = 0; i<Reservations.size(); i++)
     	{
     		Reservation x = Reservations.get(i);
     		if (x.getName().contentEquals(n) && x.getAccessPassword().contentEquals(a))
     		{
-    			Reservations.add(i,addReservations(n,x.getGuests(),x.getTime(),a));
+    			Reservations.add(i,addReservations(n,x.getGuests(),t,a));
     			Reservations.remove(i+1);
     			return "time changed";
     		}
@@ -99,8 +108,14 @@ public class ManageReservations
     			return "incorrect access password";
     		}
     	}
+    	
     	return "no reservation found.";
 	
     }    
+    public static String driverChange(String n, String a, String t)
+    {
+    	ManageReservations temp = new ManageReservations();
+    	return temp.changeTime(n,a,t);
+    }
 
 }

@@ -50,9 +50,9 @@ public class AddReservationsGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblPalindromeTester = new JLabel("Enter name for reservation");
-		lblPalindromeTester.setBounds(6, 0, 184, 26);
-		contentPane.add(lblPalindromeTester);
+		JLabel lblReservation = new JLabel("Enter name for reservation");
+		lblReservation.setBounds(6, 0, 184, 26);
+		contentPane.add(lblReservation);
 		
 		name_input = new JTextField();
 		name_input.setBounds(6, 22, 438, 26);
@@ -79,7 +79,7 @@ public class AddReservationsGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// call addRes
 				int x  = Integer.parseInt(guest_input.getText());
-				result.setText(					                          // Set return value of call to reservation return
+				result.setText(					                          // Set return value of call to addReservation
 						ManageReservations.driverAdd(			          // Call addReservations via driverAdd (is this even named appropriately)
 								name_input.getText(),                     // Get name from user input ^
 								x,                                        // get num guests from user input ^

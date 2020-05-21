@@ -11,13 +11,15 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-public class SearchReservationGUI extends JFrame {
+public class ChangeReservationTimeGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField name_input;
 	private JTextField password_input;
+	private JTextField newtime_input;
 	private JTextField result; 
+	private JLabel lblEnterNewTime;
 	
 	/**
 	 * Launch the application.
@@ -26,7 +28,7 @@ public class SearchReservationGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					SearchReservationGUI frame = new SearchReservationGUI();
+					ChangeReservationTimeGUI frame = new ChangeReservationTimeGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +40,7 @@ public class SearchReservationGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public SearchReservationGUI() {
+	public ChangeReservationTimeGUI() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 461, 315);
 		contentPane = new JPanel();
@@ -60,29 +62,39 @@ public class SearchReservationGUI extends JFrame {
 		contentPane.add(password_input);
 		password_input.setColumns(10);
 		
-		JButton buttonSearch = new JButton("Search");
-		buttonSearch.addActionListener(new ActionListener() {
+		newtime_input = new JTextField();
+		newtime_input.setBounds(6, 120, 438, 26);
+		contentPane.add(newtime_input);
+		newtime_input.setColumns(10);
+		
+		JButton buttonChange = new JButton("Change");
+		buttonChange.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// call viewReservation
-				result.setText(					                          // Set return value of call to viewReservation
-						ManageReservations.driverView(			          // Call viewReservation via driverView
+				// call changeTime
+				result.setText(					                          // Set return value of call to changeTime
+						ManageReservations.driverChange(			      // Call ChangeTime via driverChange
 								name_input.getText(),                     // Get name from user input ^
-								password_input.getText()));               // get password from user input ^
+								password_input.getText(),                 // get password from user input ^
+								newtime_input.getText()));                // get new time from user input ^
 			}  
 
 		});
-		buttonSearch.setBounds(142, 107, 145, 29);
-		contentPane.add(buttonSearch);
+		buttonChange.setBounds(146, 156, 145, 29);
+		contentPane.add(buttonChange);
 		
 		result = new JTextField();
 		result.setEditable(false);
-		result.setBounds(6, 146, 438, 47);
+		result.setBounds(6, 195, 438, 73);
 		contentPane.add(result);
 		result.setColumns(10);
 		
 		JLabel lblEnter = new JLabel("Enter reservation password");
 		lblEnter.setBounds(6, 47, 184, 26);
 		contentPane.add(lblEnter);
+		
+		lblEnterNewTime = new JLabel("Enter new time for reservation");
+		lblEnterNewTime.setBounds(6, 95, 184, 26);
+		contentPane.add(lblEnterNewTime);
 			
 	}
 }

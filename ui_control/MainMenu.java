@@ -90,6 +90,24 @@ public class MainMenu extends JFrame {
 		btnNewButton.setBounds(380, 280, 208, 129);
 		getContentPane().add(btnNewButton);
 		
+		JButton btnNewButton_1 = new JButton("Change time of res test");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reservations.ChangeReservationTimeGUI.main(null);
+			}
+		});
+		btnNewButton_1.setBounds(113, 425, 195, 114);
+		getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("delete res test");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reservations.DeleteReservationGUI.main(null);
+			}
+		});
+		btnNewButton_2.setBounds(380, 425, 208, 129);
+		getContentPane().add(btnNewButton_2);
+		
 		/*//MENU BUTTONS (wip)
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(0, 94, 1200, 58);
