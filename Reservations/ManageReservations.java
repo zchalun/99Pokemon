@@ -39,6 +39,12 @@ public class ManageReservations
     	Reservations.add(newRes);
     	return newRes;
     }
+   
+    public static String driverAdd(String n, int g, String t, String a)
+    {
+    	ManageReservations what = new ManageReservations();
+    	return what.addReservations(n,g,t,a).toString();
+    }
     
     /**
      * @param n name reservation is under
@@ -85,7 +91,6 @@ public class ManageReservations
     	}
     	return "no reservation found.";
 	
-    }
-    
+    }    
 
 }

@@ -75,7 +75,7 @@ public class MainMenu extends JFrame {
 		JButton btnReservationTest = new JButton("reservation test");
 		btnReservationTest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				//Reservations.ReservationsGUI.java
+				Reservations.ReservationsGUI.main(null);
 			}
 		});
 		btnReservationTest.setBounds(172, 393, 195, 129);
