@@ -72,14 +72,23 @@ public class MainMenu extends JFrame {
 		Login.setBackground(new java.awt.Color(36,104,177));
 		Login.setIcon(new ImageIcon(login));
 		
-		JButton btnReservationTest = new JButton("reservation test");
+		JButton btnReservationTest = new JButton("add new reservation test");
 		btnReservationTest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Reservations.ReservationsGUI.main(null);
+				Reservations.AddReservationsGUI.main(null);
 			}
 		});
-		btnReservationTest.setBounds(172, 393, 195, 129);
+		btnReservationTest.setBounds(103, 280, 195, 129);
 		getContentPane().add(btnReservationTest);
+		
+		JButton btnNewButton = new JButton("search for reservation test");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Reservations.SearchReservationGUI.main(null);
+			}
+		});
+		btnNewButton.setBounds(380, 280, 208, 129);
+		getContentPane().add(btnNewButton);
 		
 		/*//MENU BUTTONS (wip)
 		JPanel panel_1 = new JPanel();

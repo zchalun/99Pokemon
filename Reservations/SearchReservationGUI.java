@@ -1,29 +1,22 @@
 package Reservations;
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Font;
 
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+public class SearchReservationGUI extends JFrame {
 
-public class ReservationsGUI extends JFrame {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField name_input;
 	private JTextField password_input;
-	private JTextField guest_input;
-	private JTextField time_input;
 	private JTextField result; 
 	
 	/**
@@ -33,7 +26,7 @@ public class ReservationsGUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ReservationsGUI frame = new ReservationsGUI();
+					SearchReservationGUI frame = new SearchReservationGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,15 +38,15 @@ public class ReservationsGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ReservationsGUI() {
+	public SearchReservationGUI() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 460, 310);
+		setBounds(100, 100, 461, 315);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblPalindromeTester = new JLabel("Enter name for reservation");
+		JLabel lblPalindromeTester = new JLabel("Enter name of reservation");
 		lblPalindromeTester.setBounds(6, 0, 184, 26);
 		contentPane.add(lblPalindromeTester);
 		
@@ -67,50 +60,29 @@ public class ReservationsGUI extends JFrame {
 		contentPane.add(password_input);
 		password_input.setColumns(10);
 		
-		guest_input = new JTextField();
-		guest_input.setBounds(6, 119, 438, 26);
-		contentPane.add(guest_input);
-		guest_input.setColumns(10);
-		
-		time_input = new JTextField();
-		time_input.setBounds(6, 166, 438, 26);
-		contentPane.add(time_input);
-		time_input.setColumns(10);
-		
-		JButton buttonEnter = new JButton("Enter");
-		buttonEnter.addActionListener(new ActionListener() {
+		JButton buttonSearch = new JButton("Search");
+		buttonSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// call addRes
-				int x  = Integer.parseInt(guest_input.getText());
 				result.setText(					                          // Set return value of call to reservation return
-						ManageReservations.driverAdd(			          // Call addReservations via driverAdd (is this even named appropriately)
+						ManageReservations.driverView(			          // Call addReservations via driverAdd (is this even named appropriately)
 								name_input.getText(),                     // Get name from user input ^
-								x,                                        // get num guests from user input ^
-								time_input.getText(),                     // get time from user input ^
 								password_input.getText()));               // get password from user input ^
 			}  
 
 		});
-		buttonEnter.setBounds(142, 194, 145, 29);
-		contentPane.add(buttonEnter);
+		buttonSearch.setBounds(142, 107, 145, 29);
+		contentPane.add(buttonSearch);
 		
 		result = new JTextField();
 		result.setEditable(false);
-		result.setBounds(6, 226, 438, 47);
+		result.setBounds(6, 146, 438, 47);
 		contentPane.add(result);
 		result.setColumns(10);
 		
 		JLabel lblEnter = new JLabel("Enter reservation password");
 		lblEnter.setBounds(6, 47, 184, 26);
 		contentPane.add(lblEnter);
-		
-		JLabel lblEnterTotalNumber = new JLabel("Enter total number of guests (enter an integer)");
-		lblEnterTotalNumber.setBounds(6, 95, 342, 26);
-		contentPane.add(lblEnterTotalNumber);
-		
-		JLabel lblEnterTimeFor = new JLabel("Enter time for reservation (format: HH:MM AM/PM)");
-		lblEnterTimeFor.setBounds(6, 145, 414, 26);
-		contentPane.add(lblEnterTimeFor);
 			
 	}
 }

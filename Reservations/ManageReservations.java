@@ -23,7 +23,12 @@ public class ManageReservations
     		}
     	}
     	return "no reservation found. make one?";
-	
+    }
+    
+    public static String driverView(String n, String a)
+    {
+    	ManageReservations temp = new ManageReservations();
+    	return temp.viewReservations(n,a);
     }
     
     /**
@@ -42,8 +47,8 @@ public class ManageReservations
    
     public static String driverAdd(String n, int g, String t, String a)
     {
-    	ManageReservations what = new ManageReservations();
-    	return what.addReservations(n,g,t,a).toString();
+    	ManageReservations temp = new ManageReservations();
+    	return temp.addReservations(n,g,t,a).toString();
     }
     
     /**
