@@ -101,7 +101,7 @@ public class AddReservationsGUI extends JFrame {
 		lblEnter.setBounds(6, 47, 184, 26);
 		contentPane.add(lblEnter);
 		
-		JLabel lblEnterTotalNumber = new JLabel("Enter total number of guests (enter an integer)");
+		JLabel lblEnterTotalNumber = new JLabel("Enter total number of guests (an integer)");
 		lblEnterTotalNumber.setBounds(6, 95, 342, 26);
 		contentPane.add(lblEnterTotalNumber);
 		

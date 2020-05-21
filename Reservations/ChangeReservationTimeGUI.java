@@ -92,8 +92,8 @@ public class ChangeReservationTimeGUI extends JFrame {
 		lblEnter.setBounds(6, 47, 184, 26);
 		contentPane.add(lblEnter);
 		
-		lblEnterNewTime = new JLabel("Enter new time for reservation");
-		lblEnterNewTime.setBounds(6, 95, 184, 26);
+		lblEnterNewTime = new JLabel("Enter new time for reservation (format: HH:MM AM/PM)");
+		lblEnterNewTime.setBounds(6, 95, 399, 26);
 		contentPane.add(lblEnterNewTime);
 			
 	}
