@@ -2,7 +2,7 @@ package Reservations;
 import java.util.*;
 public class ManageReservations
 {
-	ArrayList<Reservation> Reservations = new ArrayList<Reservation>();
+	public ArrayList<Reservation> Reservations = new ArrayList<Reservation>();
     
     /**
      * @param n name reservation is to be made under
@@ -63,7 +63,7 @@ public class ManageReservations
      */
     public String deleteReservation(String n, String a)
     {
-    	Reservations.add(addReservations("Zhang",3,"12:30 PM","password")); //sample Reservation entry for testing
+    	//Reservations.add(addReservations("Zhang",3,"12:30 PM","password")); //sample Reservation entry for testing
 
     	for (int i = 0; i<Reservations.size(); i++)
     	{
