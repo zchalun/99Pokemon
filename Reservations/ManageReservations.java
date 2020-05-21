@@ -3,33 +3,6 @@ import java.util.*;
 public class ManageReservations
 {
 	ArrayList<Reservation> Reservations = new ArrayList<Reservation>();
-	
-	/**
-	 * @param n name reservation is under
-	 * @param a access password
-	 * @return reservation information, if found
-	 */
-    public String viewReservations(String n, String a)
-    {
-    	for (Reservation x : Reservations)
-    	{
-    		if (x.getName().contentEquals(n) && x.getAccessPassword().contentEquals(a))
-    		{
-    			return x.toString();
-    		}
-    		else if (x.getName().contentEquals(n) && !x.getAccessPassword().contentEquals(a))
-    		{
-    			return "incorrect access password";
-    		}
-    	}
-    	return "no reservation found. make one?";
-    }
-    
-    public static String driverView(String n, String a)
-    {
-    	ManageReservations temp = new ManageReservations();
-    	return temp.viewReservations(n,a);
-    }
     
     /**
      * @param n name reservation is to be made under
@@ -49,6 +22,38 @@ public class ManageReservations
     {
     	ManageReservations temp = new ManageReservations();
     	return temp.addReservations(n,g,t,a).toString();
+    }
+    
+	/**
+	 * @param n name reservation is under
+	 * @param a access password
+	 * @return reservation information, if found
+	 */
+    public String viewReservations(String n, String a)
+    {
+    	//Reservations.add(addReservations("Zhang",3,"12:30 PM","password"));
+    	for (Reservation x : Reservations)
+    	{
+    		System.out.println(x.toString());
+    	}
+    	for (Reservation x : Reservations)
+    	{
+    		if (x.getName().contentEquals(n) && x.getAccessPassword().contentEquals(a))
+    		{
+    			return x.toString();
+    		}
+    		else if (x.getName().contentEquals(n) && !x.getAccessPassword().contentEquals(a))
+    		{
+    			return "incorrect access password";
+    		}
+    	}
+    	return "no reservation found. make one?";
+    }
+    
+    public static String driverView(String n, String a)
+    {
+    	ManageReservations temp = new ManageReservations();
+    	return temp.viewReservations(n,a);
     }
     
     /**
