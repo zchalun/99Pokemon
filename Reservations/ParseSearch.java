@@ -12,8 +12,18 @@ public class ParseSearch {
 		}
 		return -1;
 	}
-	/*public static void main(String args[])
+	public static String getName(String mess)
 	{
-		getGuests("{    \"numGuests\" : 6,    \"password\" : \"password\",    \"name\" : \"Zhang\",    \"time\" : \"12:30 PM\"  }");
-	}*/
+		int i = mess.indexOf("\"name\" : ");
+		int j = mess.indexOf("\"time\"");
+		String name = mess.substring(i+10,j-6);
+		return name;
+	}
+	public static String getTime(String mess)
+	{
+		int i = mess.indexOf("\"time\"");
+		int j = mess.indexOf("}");
+		String time = mess.substring(i+10,j-3);
+		return time;
+	}
 }

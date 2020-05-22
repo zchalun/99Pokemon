@@ -85,8 +85,11 @@ public class ManageReservations
 	    {
 	    	return "reservation not found";
 	    }
+	    String x = item.toJSONPretty();
 
-		return item.toJSONPretty();
+		return "reservation found for " + ParseSearch.getName(x) + 
+				" and " + (ParseSearch.getGuests(x)-1) + 
+				" others at " + ParseSearch.getTime(x);
 	}
     
     public static String driverView(String n, String a)
