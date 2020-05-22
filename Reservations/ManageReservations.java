@@ -1,4 +1,5 @@
 package Reservations;
+import java.sql.SQLException;
 import java.util.*;
 public class ManageReservations
 {
@@ -10,15 +11,18 @@ public class ManageReservations
      * @param t time of reservation
      * @param a access password for reservation security
      * @return new reservation
+     * @throws SQLException 
+     * @throws InterruptedException 
      */
-    public Reservation addReservations(String n, int g, String t, String a)
+    public Reservation addReservations(String n, int g, String t, String a) throws InterruptedException, SQLException
     {
     	Reservation newRes = new Reservation(n,g,t,a);
     	Reservations.add(newRes);
+    	Databases.WritetoTable.create(n, g, t, a);
     	return newRes;
     }
    
-    public static String driverAdd(String n, int g, String t, String a)
+    public static String driverAdd(String n, int g, String t, String a) throws InterruptedException, SQLException
     {
     	ManageReservations temp = new ManageReservations();
     	return temp.addReservations(n,g,t,a).toString();
@@ -90,8 +94,10 @@ public class ManageReservations
      * @param n name reservation is under
      * @param a access password
      * @return whether time was successfully changed
+     * @throws SQLException 
+     * @throws InterruptedException 
      */
-    public String changeTime(String n, String a, String t)
+    public String changeTime(String n, String a, String t) throws InterruptedException, SQLException
     {
     	//Reservations.add(addReservations("Zhang",3,"12:30 PM","password")); //sample Reservation entry for testing
     	for (int i = 0; i<Reservations.size(); i++)
@@ -112,7 +118,7 @@ public class ManageReservations
     	return "no reservation found.";
 	
     }    
-    public static String driverChange(String n, String a, String t)
+    public static String driverChange(String n, String a, String t) throws InterruptedException, SQLException
     {
     	ManageReservations temp = new ManageReservations();
     	return temp.changeTime(n,a,t);

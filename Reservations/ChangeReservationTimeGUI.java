@@ -3,6 +3,7 @@ package Reservations;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -71,11 +72,19 @@ public class ChangeReservationTimeGUI extends JFrame {
 		buttonChange.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// call changeTime
-				result.setText(					                          // Set return value of call to changeTime
-						ManageReservations.driverChange(			      // Call ChangeTime via driverChange
-								name_input.getText(),                     // Get name from user input ^
-								password_input.getText(),                 // get password from user input ^
-								newtime_input.getText()));                // get new time from user input ^
+				try {
+					result.setText(					                          // Set return value of call to changeTime
+							ManageReservations.driverChange(			      // Call ChangeTime via driverChange
+									name_input.getText(),                     // Get name from user input ^
+									password_input.getText(),                 // get password from user input ^
+									newtime_input.getText()));
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}                // get new time from user input ^
 			}  
 
 		});

@@ -18,7 +18,7 @@ import com.amazonaws.services.dynamodbv2.document.Table;
 
 public class WritetoTable {
 
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
     	//connect();
     	//displayAll();
     	create();
@@ -34,10 +34,10 @@ public class WritetoTable {
 			System.out.println(e.getMessage());
 		}
 		return conn; //returns a connection object
-	}
+	}*/
 	
 	
-	public static void create() throws InterruptedException, SQLException
+	public static void create(String n, int g, String t, String a) throws InterruptedException, SQLException
 	{
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withRegion("us-west-2").build();
 		DynamoDB dynamoDB = new DynamoDB(client);
@@ -46,9 +46,9 @@ public class WritetoTable {
 		
 		// Build the item
 		Item item = new Item()
-		    .withPrimaryKey("name", "Gao","password","password2@")
-		    .withNumber("numGuests", 4)
-		    .withString("time", "12:45 PM");
+		    .withPrimaryKey("name", n,"password",a)
+		    .withNumber("numGuests", g)
+		    .withString("time", t);
 
 		// Write the item to the table
 		PutItemOutcome outcome = table.putItem(item);

@@ -11,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 public class AddReservationsGUI extends JFrame {
@@ -79,12 +80,20 @@ public class AddReservationsGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// call addRes
 				int x  = Integer.parseInt(guest_input.getText());
-				result.setText(					                          // Set return value of call to addReservation
-						ManageReservations.driverAdd(			          // Call addReservations via driverAdd (is this even named appropriately)
-								name_input.getText(),                     // Get name from user input ^
-								x,                                        // get num guests from user input ^
-								time_input.getText(),                     // get time from user input ^
-								password_input.getText()));               // get password from user input ^
+				try {
+					result.setText(					                          // Set return value of call to addReservation
+							ManageReservations.driverAdd(			          // Call addReservations via driverAdd (is this even named appropriately)
+									name_input.getText(),                     // Get name from user input ^
+									x,                                        // get num guests from user input ^
+									time_input.getText(),                     // get time from user input ^
+									password_input.getText()));
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}               // get password from user input ^
 			}  
 
 		});
