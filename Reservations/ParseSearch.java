@@ -1,5 +1,9 @@
 package Reservations;
-
+/**
+ * support class for viewReservation
+ * @author CynthiaZ
+ *
+ */
 public class ParseSearch {
 	public static int getGuests(String mess)
 	{
@@ -25,5 +29,12 @@ public class ParseSearch {
 		int j = mess.indexOf("}");
 		String time = mess.substring(i+10,j-3);
 		return time;
+	}
+	public static int getGuestfromView(String mess) // to support the change time class
+	{
+		int i = mess.indexOf(" and ");
+		int j = mess.indexOf(" others ");
+		String g = mess.substring(i+5,j);
+		return (Integer.parseInt(g)+1); //+1 because the return statement from view is -1
 	}
 }

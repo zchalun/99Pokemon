@@ -155,7 +155,7 @@ public class ManageReservations
     {
     	if (!driverView(n,a).contentEquals("reservation not found"))
     	{
-    		int numG = ParseSearch.getGuests(driverView(n,a));
+    		int numG = ParseSearch.getGuestfromView(driverView(n,a));
     		driverDelete(n,a);
     		driverAdd(n,numG,t,a);
     		return "Reservation updated";
