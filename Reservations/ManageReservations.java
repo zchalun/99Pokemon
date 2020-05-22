@@ -10,10 +10,15 @@ import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.document.UpdateItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.spec.DeleteItemSpec;
+import com.amazonaws.services.dynamodbv2.document.spec.UpdateItemSpec;
 import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.ReturnValue;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
+import com.amazonaws.services.dynamodbv2.model.UpdateItemRequest;
 public class ManageReservations
 {
 	public ArrayList<Reservation> Reservations = new ArrayList<Reservation>();
@@ -136,6 +141,7 @@ public class ManageReservations
     }
     
     /**
+     * I couldn't figure out how to update the table entry so this is what I got... it works though
      * @param n name reservation is under
      * @param a access password
      * @return whether time was successfully changed
@@ -144,23 +150,17 @@ public class ManageReservations
      */
     public String changeTime(String n, String a, String t) throws InterruptedException, SQLException
     {
-    	//Reservations.add(addReservations("Zhang",3,"12:30 PM","password")); //sample Reservation entry for testing
-    	for (int i = 0; i<Reservations.size(); i++)
+    	if (!driverView(n,a).contentEquals("reservation not found"))
     	{
-    		Reservation x = Reservations.get(i);
-    		if (x.getName().contentEquals(n) && x.getAccessPassword().contentEquals(a))
-    		{
-    			Reservations.add(i,addReservations(n,x.getGuests(),t,a));
-    			Reservations.remove(i+1);
-    			return "time changed";
-    		}
-    		else if (x.getName().contentEquals(n) && !x.getAccessPassword().contentEquals(a))
-    		{
-    			return "incorrect access password";
-    		}
+    		int numG = ParseSearch.getGuests(driverView(n,a));
+    		driverDelete(n,a);
+    		driverAdd(n,numG,t,a);
+    		return "Reservation updated";
     	}
-    	
-    	return "no reservation found.";
+    	else
+    	{
+    		return "Reservation not found";
+    	}
 	
     }    
     public static String driverChange(String n, String a, String t) throws InterruptedException, SQLException
