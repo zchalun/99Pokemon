@@ -8,7 +8,10 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.Item;
+import com.amazonaws.services.dynamodbv2.document.PrimaryKey;
 import com.amazonaws.services.dynamodbv2.document.Table;
+import com.amazonaws.services.dynamodbv2.document.spec.DeleteItemSpec;
+import com.amazonaws.services.dynamodbv2.document.utils.ValueMap;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 public class ManageReservations
@@ -28,7 +31,7 @@ public class ManageReservations
     {
     	Reservation newRes = new Reservation(n,g,t,a);
     	Reservations.add(newRes);
-    	Databases.WritetoTable.create(n, g, t, a);
+    	Databases.DatabaseActions.create(n, g, t, a);
     	return newRes;
     }
    
@@ -92,29 +95,45 @@ public class ManageReservations
      * @param a access password
      * @return whether reservation was successfully removed
      */
-    /*public String deleteReservation(String n, String a)
+    public String deleteReservation(String n, String a)
     {
-    	for (int i = 0; i<Reservations.size(); i++)
-    	{
-    		Reservation x = Reservations.get(i);
-    		if (x.getName().contentEquals(n) && x.getAccessPassword().contentEquals(a))
-    		{
-    			Reservations.remove(i);
-    			return "reservation removed";
-    		}
-    		else if (x.getName().contentEquals(n) && !x.getAccessPassword().contentEquals(a))
-    		{
-    			return "incorrect access password";
-    		}
-    	}
-    	return "no reservation found.";   		
-    	
+    	ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
+        try {
+            credentialsProvider.getCredentials();
+        } catch (Exception e) {
+            throw new AmazonClientException(
+                    "Cannot load the credentials from the credential profiles file. " +
+                    "Please make sure that your credentials file is at the correct " +
+                    "location (/Users/johnmortensen/.aws/credentials), and is in valid format.",
+                    e);
+        }
+        AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
+        	.withCredentials(credentialsProvider)
+            .withRegion("us-west-2")
+            .build();
+
+        DynamoDB dynamoDB = new DynamoDB(client);
+
+        Table table = dynamoDB.getTable("Reservations");
+
+
+        DeleteItemSpec deleteItemSpec = new DeleteItemSpec()
+            .withPrimaryKey(new PrimaryKey("name", n, "password", a));
+        
+        if (driverView(n,a).contentEquals("reservation not found"))
+        {
+        	return "reservation not found. check password?";
+        }
+        else {
+            table.deleteItem(deleteItemSpec);
+            return "Reservation Deleted";
+        }
     }
     public static String driverDelete(String n, String a)
     {
     	ManageReservations temp = new ManageReservations();
     	return temp.deleteReservation(n,a);
-    }*/
+    }
     
     /**
      * @param n name reservation is under

@@ -16,7 +16,7 @@ import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.PutItemOutcome;
 import com.amazonaws.services.dynamodbv2.document.Table;
 
-public class WritetoTable {
+public class DatabaseActions {
 
     /*public static void main(String[] args) throws Exception {
     	//connect();
@@ -53,4 +53,6 @@ public class WritetoTable {
 		// Write the item to the table
 		PutItemOutcome outcome = table.putItem(item);
 	}
+	
+	
 }
