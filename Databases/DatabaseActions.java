@@ -37,7 +37,7 @@ public class DatabaseActions {
 	}*/
 	
 	
-	public static void create(String n, int g, String t, String a) throws InterruptedException, SQLException
+	public static void create(String n, int g, String t, String a) throws InterruptedException, SQLException //used to add reservations
 	{
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withRegion("us-west-2").build();
 		DynamoDB dynamoDB = new DynamoDB(client);

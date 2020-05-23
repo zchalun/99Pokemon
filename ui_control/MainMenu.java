@@ -6,6 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import model_pokemon.PokeDex;
+
 import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
