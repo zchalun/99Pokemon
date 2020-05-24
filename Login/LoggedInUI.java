@@ -33,7 +33,7 @@ public class LoggedInUI extends JFrame {
 	 */
 	public LoggedInUI() {
 		getContentPane().setBackground(Color.LIGHT_GRAY);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1200, 750);
 		getContentPane().setLayout(null);	
 	}
