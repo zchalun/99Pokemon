@@ -17,7 +17,7 @@ import java.awt.event.ActionEvent;
 public class MainMenu extends JFrame {
 
 	/** 
-	 * 
+	 *  
 	 */
 	private static final long serialVersionUID = 1L;
 	//private final Action action = new SwingAction();
