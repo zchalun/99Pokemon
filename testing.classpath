@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="src" path="/CSA-teacher-aws-dynamodb"/>
+	<classpathentry kind="lib" path="/pgcclaj-amazon/AWS SDK/aws-toolkit-for-eclipse-v201805311643/plugins/com.amazonaws.eclipse.javasdk_1.11.248.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
