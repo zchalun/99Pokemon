@@ -68,12 +68,17 @@ public class MainMenu extends JFrame {
 		Advertisement.setBackground(new java.awt.Color(36,104,177));
 		Advertisement.setIcon(new ImageIcon(ad));
 		
-		JButton Login = new JButton("");
+		JButton LoginButton = new JButton("");
+		LoginButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Login.LoginPageUI.main(null);
+			}
+		});
 		java.awt.Image login = new ImageIcon("Login.png").getImage();
-		Login.setBounds(960, 0, 240, 94);
-		panel.add(Login);
-		Login.setBackground(new java.awt.Color(36,104,177));
-		Login.setIcon(new ImageIcon(login));
+		LoginButton.setBounds(960, 0, 240, 94);
+		panel.add(LoginButton);
+		LoginButton.setBackground(new java.awt.Color(36,104,177));
+		LoginButton.setIcon(new ImageIcon(login));
 		
 		JButton btnReservationTest = new JButton("add new reservation test");
 		btnReservationTest.addActionListener(new ActionListener() {

@@ -36,7 +36,7 @@ public class ManageReservations
     {
     	Reservation newRes = new Reservation(n,g,t,a);
     	Reservations.add(newRes);
-    	Databases.DatabaseActions.create(n, g, t, a);
+    	Databases.DatabaseActions.createReservation(n, g, t, a);
     	return newRes;
     }
    

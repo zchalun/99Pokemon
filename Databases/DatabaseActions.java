@@ -37,7 +37,7 @@ public class DatabaseActions {
 	}*/
 	
 	
-	public static void create(String n, int g, String t, String a) throws InterruptedException, SQLException //used to add reservations
+	public static void createReservation(String n, int g, String t, String a) throws InterruptedException, SQLException //used to add reservations
 	{
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withRegion("us-west-2").build();
 		DynamoDB dynamoDB = new DynamoDB(client);
@@ -49,6 +49,20 @@ public class DatabaseActions {
 		    .withPrimaryKey("name", n,"password",a)
 		    .withNumber("numGuests", g)
 		    .withString("time", t);
+
+		// Write the item to the table
+		PutItemOutcome outcome = table.putItem(item);
+	}
+	public static void createAccount(String n, String p) throws InterruptedException, SQLException //used to create account
+	{
+		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withRegion("us-west-2").build();
+		DynamoDB dynamoDB = new DynamoDB(client);
+
+		Table table = dynamoDB.getTable("99PokemonAccounts");
+		
+		// Build the item
+		Item item = new Item()
+		    .withPrimaryKey("username", n,"password",p);
 
 		// Write the item to the table
 		PutItemOutcome outcome = table.putItem(item);
