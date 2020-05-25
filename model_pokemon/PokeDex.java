@@ -1,5 +1,4 @@
 package model_pokemon;
-import javax.swing.JFrame;
 import java.util.*;
 
 public class PokeDex

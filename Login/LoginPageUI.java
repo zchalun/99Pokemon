@@ -21,9 +21,6 @@ import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
 
-import Reservations.ParseSearch;
-import java.awt.Color;
-
 public class LoginPageUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
