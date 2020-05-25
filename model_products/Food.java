@@ -8,6 +8,7 @@ import java.sql.Statement;
 public abstract class Food {
 	protected String name; // product name
 	protected String flavor; //product flavor
+	protected String type; //type of food, eg berry
 	//protected String[] type; //array of pokemon types compatible
 	protected double price; //product price
 	protected int ID; // product ID
@@ -45,8 +46,8 @@ public abstract class Food {
 		return desc;
 	}
 	
-	/*public String[] getType() {
+	public String getType() {
 		return type;
-	}*/
+	}
 	
 }

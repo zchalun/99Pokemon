@@ -42,5 +42,6 @@ public class Menu {
 		MenuSelections.add(new Berry("durin","bitter",10,34,"none"));
 		MenuSelections.add(new Berry("belue","sour",10,35,"none"));
 
+		//figure out how to do poffin flavors
 	}
 }

@@ -15,6 +15,7 @@ public class Berry extends Food{
 	{
 		name = n; // product name
 		flavor = f; //product flavor
+		type = "berry"; //product type
 		//type = new String[]{"bug","dragon","electric", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel","water"}; //array of pokemon types compatible
 		price = p; //product price
 		ID = i; // product ID
