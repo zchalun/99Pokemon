@@ -2,13 +2,13 @@ package model_products;
 
 public class Poffin extends Food{
 	
-	public Poffin(String n, Berry b, double p, int i, String d) //single flavor poffins
+	public Poffin(Food b) //single flavor poffins
 	{
-		name = n;
+		name = b.getName() + " poffin";
 		type = "poffin";
 		flavor = b.getFlavor();
-		price = p;
-		ID = i;
-		desc = d;
+		price = b.getPrice() + 100;
+		ID = b.getID()+35;
+		desc = "a delicious " + b.getName() + " flavored poffin!";
 	}
 }

@@ -41,7 +41,15 @@ public class Menu {
 		MenuSelections.add(new Berry("watmel","sweet",10,33,"none"));
 		MenuSelections.add(new Berry("durin","bitter",10,34,"none"));
 		MenuSelections.add(new Berry("belue","sour",10,35,"none"));
-
-		//figure out how to do poffin flavors
+		
+		for (int i=0; i<35; i++)
+		{
+			MenuSelections.add(new Poffin(MenuSelections.get(i)));
+		}
 	}
+	/*public static void main(String args[])
+	{
+		Menu a = new Menu();
+		System.out.println(a.MenuSelections.get(69).getName() + " " + a.MenuSelections.get(69).getID());
+	}*/
 }
