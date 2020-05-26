@@ -6,6 +6,7 @@ public class Menu {
 	ArrayList<Food> MenuSelections = new ArrayList<Food>();
 	public Menu()
 	{
+		//all gen 3 berries
 		MenuSelections.add(new Berry("cheri","spicy",120,1,"cure paralysis"));
 		MenuSelections.add(new Berry("chesto","dry",30,2,"cure sleep"));
 		MenuSelections.add(new Berry("pecha","sweet",80,3,"cure poison"));
@@ -42,10 +43,13 @@ public class Menu {
 		MenuSelections.add(new Berry("durin","bitter",10,34,"none"));
 		MenuSelections.add(new Berry("belue","sour",10,35,"none"));
 		
+		//all gen 3 berry poffins
 		for (int i=0; i<35; i++)
 		{
 			MenuSelections.add(new Poffin(MenuSelections.get(i)));
 		}
+		
+		//add drinks and maybe make up own
 	}
 	/*public static void main(String args[])
 	{
