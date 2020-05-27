@@ -3,6 +3,7 @@ package Login;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -20,6 +21,10 @@ import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
+
+import Reservations.AddReservationsGUI;
+import Reservations.ManageReservations;
+
 import java.awt.Color;
 import javax.swing.DropMode;
 import javax.swing.ImageIcon;
@@ -28,9 +33,11 @@ public class LoginPageUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField username_input;
-	private JTextField password_input;
-	private JTextField loginStatus;
+	private JTextField name_display;
+	private JTextField type_display;
+	private JTextField price_display;
+	private JTextField desc_display;
+	private JTextField result; 
 	
 	/**
 	 * Launch the application.
@@ -39,7 +46,7 @@ public class LoginPageUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginPageUI frame = new LoginPageUI();
+					AddReservationsGUI frame = new AddReservationsGUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,116 +59,69 @@ public class LoginPageUI extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginPageUI() {
-		setBackground(Color.BLACK);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 515, 330);
+		setBounds(100, 100, 466, 328);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblReservation = new JLabel("");
-		lblReservation.setForeground(Color.WHITE);
-		lblReservation.setBounds(17, 10, 122, 30);
+		JLabel lblReservation = new JLabel("Name:");
+		lblReservation.setBounds(6, 0, 184, 26);
 		contentPane.add(lblReservation);
-		java.awt.Image user = new ImageIcon("username.png").getImage();
-		lblReservation.setIcon(new ImageIcon(user));
 		
-		username_input = new JTextField();
-		username_input.setBounds(17, 44, 465, 30);
-		contentPane.add(username_input);
-		username_input.setColumns(10);
-		username_input.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		name_display = new JTextField();
+		name_display.setEditable(false);
+		name_display.setBounds(6, 22, 438, 26);
+		contentPane.add(name_display);
+		name_display.setColumns(10);
 		
-		password_input = new JTextField();
-		password_input.setBounds(17, 112, 465, 30);
-		contentPane.add(password_input);
-		password_input.setColumns(10);
-		password_input.setBorder(javax.swing.BorderFactory.createEmptyBorder());
+		type_display = new JTextField();
+		type_display.setEditable(false);
+		type_display.setBounds(6, 71, 438, 26);
+		contentPane.add(type_display);
+		type_display.setColumns(10);
 		
-		JButton buttonLogin = new JButton("");
-		buttonLogin.setBounds(176, 155, 149, 48);
-		java.awt.Image login = new ImageIcon("Login1.png").getImage();
-		buttonLogin.setIcon(new ImageIcon(login));
-		buttonLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { //checking 99PokemonAccounts database for credentials
-				ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
-		        try {
-		            credentialsProvider.getCredentials();
-		        } catch (Exception e1) {
-		            throw new AmazonClientException(
-		                    "Cannot load the credentials from the credential profiles file. " +
-		                    "Please make sure that your credentials file is at the correct " +
-		                    "location (/Users/johnmortensen/.aws/credentials), and is in valid format.",
-		                    e1);
-		        }
-		        AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard()
-		        	.withCredentials(credentialsProvider)
-		            .withRegion("us-west-2")
-		            .build();
-
-				DynamoDB dynamoDB = new DynamoDB(client);
-			    Table table = dynamoDB.getTable("99PokemonAccounts");
-			    ScanRequest scanRequest = new ScanRequest()
-			    	    .withTableName("99PokemonAccounts");
-
-
-			    ScanResult result = client.scan(scanRequest);
-			    Item item = null;
-
-			    for(int x = 1; x <= result.getCount(); x++)
-			    {
-			    	item = table.getItem("username", username_input.getText(), "password", password_input.getText());
-			    }
-			    if (item == null) //if credentials not found, no login
-			    {
-			    	loginStatus.setText("incorrect username or password");
-			    }
-			    else //if credentials found, login
-			    {
-			    	loginStatus.setText("login successful");
-			    	LoggedInUI.main(null);
-			    }
-			}
-
-		});
-		contentPane.add(buttonLogin);
-	
+		price_display = new JTextField();
+		price_display.setEditable(false);
+		price_display.setBounds(6, 119, 438, 26);
+		contentPane.add(price_display);
+		price_display.setColumns(10);
 		
-		JLabel lblEnter = new JLabel("");
-		lblEnter.setForeground(Color.WHITE);
-		lblEnter.setBounds(17, 84, 122, 30);
-		contentPane.add(lblEnter);
-		java.awt.Image pass = new ImageIcon("Password.png").getImage();
-		lblEnter.setIcon(new ImageIcon(pass));
+		desc_display = new JTextField();
+		desc_display.setEditable(false);
+		desc_display.setBounds(6, 166, 438, 26);
+		contentPane.add(desc_display);
+		desc_display.setColumns(10);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setBounds(230, 252, 198, 36);
-		java.awt.Image create = new ImageIcon("Create.png").getImage();
-		btnNewButton.setIcon(new ImageIcon(create));
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton buttonEnter = new JButton("Add to Order");
+		buttonEnter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CreateAccountUI.main(null);
-			}
+				// add to order
+				
+			}  
+
 		});
-		contentPane.add(btnNewButton);
+		buttonEnter.setBounds(142, 194, 145, 29);
+		contentPane.add(buttonEnter);
 		
-		JLabel lblNewAccount = new JLabel("New to 99Pokemon?:");
-		lblNewAccount.setForeground(Color.WHITE);
-		lblNewAccount.setBounds(62, 255, 160, 30);
-		contentPane.add(lblNewAccount);
-		java.awt.Image New = new ImageIcon("New.png").getImage();
-		lblNewAccount.setIcon(new ImageIcon(New));
+		result = new JTextField();
+		result.setEditable(false);
+		result.setBounds(6, 226, 438, 47);
+		contentPane.add(result);
+		result.setColumns(10);
 		
-		loginStatus = new JTextField();
-		loginStatus.setEditable(false);
-		loginStatus.setBackground(Color.BLACK);
-		loginStatus.setForeground(Color.WHITE);
-		loginStatus.setBounds(17, 212, 465, 30);
-		loginStatus.setColumns(10);
-		loginStatus.setBorder(javax.swing.BorderFactory.createEmptyBorder());
-		contentPane.add(loginStatus);
+		JLabel lblEnter = new JLabel("Type");
+		lblEnter.setBounds(6, 47, 184, 26);
+		contentPane.add(lblEnter);
+		
+		JLabel lblEnterTotalNumber = new JLabel("Price:");
+		lblEnterTotalNumber.setBounds(6, 95, 342, 26);
+		contentPane.add(lblEnterTotalNumber);
+		
+		JLabel lblEnterTimeFor = new JLabel("Description");
+		lblEnterTimeFor.setBounds(6, 145, 414, 26);
+		contentPane.add(lblEnterTimeFor);
 			
 	}
 }
