@@ -49,7 +49,43 @@ public class Menu {
 			MenuSelections.add(new Poffin(MenuSelections.get(i)));
 		}
 		
-		//add drinks and maybe make up own
+		//drinks
+		MenuSelections.add(new Drink("fresh water", "none", 200,71,"Heals 30 HP"));
+		MenuSelections.add(new Drink("soda pop", "spicy", 300,72,"Heals 50 HP"));
+		MenuSelections.add(new Drink("lemonade", "sour", 350,73,"Heals 70 HP"));
+		MenuSelections.add(new Drink("moomoo milk", "none", 500,74,"Heals 100 HP"));
+		MenuSelections.add(new Drink("berry juice", "sweet", 400,75,"Heals 20 HP"));
+		MenuSelections.add(new Drink("tea", "bitter", 250,76,"tastes good"));
+
+		//pokeblocks
+		MenuSelections.add(new Pokeblock("black", "none", 50,77,"yum"));
+		MenuSelections.add(new Pokeblock("red", "spicy", 70,78,"yum"));
+		MenuSelections.add(new Pokeblock("blue", "dry", 70,79,"yum"));
+		MenuSelections.add(new Pokeblock("pink", "sweet", 70,80,"yum"));
+		MenuSelections.add(new Pokeblock("green", "bitter", 70,81,"yum"));
+		MenuSelections.add(new Pokeblock("yellow", "sour", 70,82,"yum"));
+		MenuSelections.add(new Pokeblock("gold", "none", 100,83,"yum"));
+		MenuSelections.add(new Pokeblock("purple", "spicy", 120,84,"yum"));
+		MenuSelections.add(new Pokeblock("indigo", "dry", 120,85,"yum"));
+		MenuSelections.add(new Pokeblock("brown", "sweet", 120,86,"yum"));
+		MenuSelections.add(new Pokeblock("liteblue", "bitter", 120,87,"yum"));
+		MenuSelections.add(new Pokeblock("olive", "sour", 120,88,"yum"));
+		MenuSelections.add(new Pokeblock("grey", "none", 150,89,"yum"));
+		MenuSelections.add(new Pokeblock("white", "none", 150,90,"yum"));
+		
+		//poke puffs
+		MenuSelections.add(new PokePuff("basic sweet", "sweet", 150,91,"cute little cupcakes"));
+		MenuSelections.add(new PokePuff("basic mint", "dry", 150,92,"cute little cupcakes"));
+		MenuSelections.add(new PokePuff("basic citrus", "sour", 150,93,"cute little cupcakes"));
+		MenuSelections.add(new PokePuff("basic mocha", "bitter", 150,94,"cute little cupcakes"));
+		MenuSelections.add(new PokePuff("basic spice", "spicy", 150,95,"cute little cupcakes"));
+		MenuSelections.add(new PokePuff("deluxe sweet", "sweet", 300,96,"fancy little cupcakes"));
+		MenuSelections.add(new PokePuff("deluxe mint", "dry", 300,97,"fancy little cupcakes"));
+		MenuSelections.add(new PokePuff("deluxe citrus", "sour", 300,98,"fancy little cupcakes"));
+		MenuSelections.add(new PokePuff("deluxe mocha", "bitter", 300,99,"fancy little cupcakes"));
+		MenuSelections.add(new PokePuff("deluxe spice", "spicy", 300,100,"fancy little cupcakes"));
+
+	
 	}
 	/*public static void main(String args[])
 	{
