@@ -20,6 +20,9 @@ import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
+
+import ui_control.MainMenu;
+
 import java.awt.Color;
 import javax.swing.DropMode;
 import javax.swing.ImageIcon;
@@ -41,6 +44,8 @@ public class LoginPageUI extends JFrame {
 				try {
 					LoginPageUI frame = new LoginPageUI();
 					frame.setVisible(true);
+					MainMenu frame1 = new MainMenu();
+					frame1.setVisible(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -53,8 +58,8 @@ public class LoginPageUI extends JFrame {
 	 */
 	public LoginPageUI() {
 		setBackground(Color.BLACK);
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 515, 330);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+		setBounds(100, 100, 515, 337);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -162,6 +167,6 @@ public class LoginPageUI extends JFrame {
 		loginStatus.setColumns(10);
 		loginStatus.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		contentPane.add(loginStatus);
-			
+		
 	}
 }
