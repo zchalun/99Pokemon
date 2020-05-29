@@ -30,7 +30,7 @@ public class LoginPageUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField username_input;
-	private JTextField password_input;
+	private JPasswordField password_input;
 	private JTextField loginStatus;
 	
 	/**

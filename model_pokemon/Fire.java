@@ -7,6 +7,7 @@ public class Fire extends Pokemon
 		name = n;
 		ID = i;
 		type = "fire";
+		flavors = new String[]{"sweet","dry","sour","spicy"};
 		weak = new String[]{"water","steel"};
 		strength = new String[]{"grass"};
 	}

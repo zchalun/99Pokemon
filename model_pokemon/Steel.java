@@ -7,6 +7,7 @@ public class Steel extends Pokemon{
 		name = n;
 		ID = i;
 		type = "steel";
+		flavors = new String[]{"sweet","bitter","dry","sour","spicy"};
 		weak = new String[]{"fire","fighting","ground"};
 		strength = new String[] {"ice","rock","normal","grass","flying","psychic","bug","rock","dragon","steel"};
 	}

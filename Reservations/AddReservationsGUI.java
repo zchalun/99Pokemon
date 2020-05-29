@@ -6,6 +6,7 @@ import java.awt.Font;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -19,7 +20,7 @@ public class AddReservationsGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField name_input;
-	private JTextField password_input;
+	private JPasswordField password_input;
 	private JTextField guest_input;
 	private JTextField time_input;
 	private JTextField result; 
@@ -60,7 +61,7 @@ public class AddReservationsGUI extends JFrame {
 		contentPane.add(name_input);
 		name_input.setColumns(10);
 		
-		password_input = new JTextField();
+		password_input = new JPasswordField();
 		password_input.setBounds(6, 71, 438, 26);
 		contentPane.add(password_input);
 		password_input.setColumns(10);

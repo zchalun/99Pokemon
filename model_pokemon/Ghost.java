@@ -7,6 +7,7 @@ public class Ghost extends Pokemon
 		name = n;
 		ID = i;
 		type = "ghost";
+		flavors = new String[]{"bitter"};
 		weak = new String[]{"fire"};
 		strength = new String[]{"poison","fairy"};
 	}
