@@ -7,6 +7,7 @@ public class Rock extends Pokemon{
 		name = n;
 		ID = i;
 		type = "rock";
+		flavors = new String[]{"dry","sour"};
 		weak = new String[]{"water","grass","fighting","ground","steel"};
 		strength = new String[] {"flying","bug","fire","ice"};
 	}

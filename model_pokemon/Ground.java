@@ -7,6 +7,7 @@ public class Ground extends Pokemon
 		name = n;
 		ID = i;
 		type = "ground";
+		flavors = new String[]{"dry"};
 		weak = new String[]{"grass"};
 		strength = new String[]{"fire"};
 	}

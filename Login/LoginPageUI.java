@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -32,7 +33,7 @@ public class LoginPageUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField username_input;
-	private JTextField password_input;
+	private JPasswordField password_input;
 	private JTextField loginStatus;
 	
 	/**
@@ -79,7 +80,7 @@ public class LoginPageUI extends JFrame {
 		username_input.setColumns(10);
 		username_input.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
-		password_input = new JTextField();
+		password_input = new JPasswordField();
 		password_input.setBounds(17, 112, 465, 30);
 		contentPane.add(password_input);
 		password_input.setColumns(10);

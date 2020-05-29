@@ -13,6 +13,10 @@ import java.awt.BorderLayout;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JCheckBox;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.SwingConstants;
 
 public class MainMenu extends JFrame {
 
@@ -86,7 +90,7 @@ public class MainMenu extends JFrame {
 				Reservations.AddReservationsGUI.main(null);
 			}
 		});
-		btnReservationTest.setBounds(103, 280, 195, 129);
+		btnReservationTest.setBounds(25, 109, 195, 129);
 		getContentPane().add(btnReservationTest);
 		
 		JButton btnNewButton = new JButton("search for reservation test");
@@ -95,7 +99,7 @@ public class MainMenu extends JFrame {
 				Reservations.SearchReservationGUI.main(null);
 			}
 		});
-		btnNewButton.setBounds(380, 280, 208, 129);
+		btnNewButton.setBounds(230, 109, 208, 129);
 		getContentPane().add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Change time of res test");
@@ -104,7 +108,7 @@ public class MainMenu extends JFrame {
 				Reservations.ChangeReservationTimeGUI.main(null);
 			}
 		});
-		btnNewButton_1.setBounds(113, 425, 195, 114);
+		btnNewButton_1.setBounds(448, 116, 195, 114);
 		getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("delete res test");
@@ -113,7 +117,7 @@ public class MainMenu extends JFrame {
 				Reservations.DeleteReservationGUI.main(null);
 			}
 		});
-		btnNewButton_2.setBounds(380, 425, 208, 129);
+		btnNewButton_2.setBounds(655, 109, 208, 129);
 		getContentPane().add(btnNewButton_2);
 		
 		/*//MENU BUTTONS (wip)

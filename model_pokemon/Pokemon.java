@@ -5,6 +5,7 @@ public abstract class Pokemon {
 		protected int ID; // pokemon ID, ie bulbasaur 1, ivysaur 2, etc
 		protected String type;
 		protected String[] weak;
+		protected String[] flavors;
 		protected String[] strength; 
 		protected String[] no_effect;
 		
@@ -41,5 +42,9 @@ public abstract class Pokemon {
 		
 		public String[] getNoEffect() {
 			return no_effect;
+		}
+		
+		public String[] getFlavors() {
+			return flavors;
 		}
 	}

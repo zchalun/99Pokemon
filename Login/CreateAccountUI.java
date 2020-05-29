@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
@@ -20,7 +21,7 @@ public class CreateAccountUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField username_input;
-	private JTextField password_input;
+	private JPasswordField password_input;
 	private JTextField result; 
 	
 	/**
@@ -70,7 +71,7 @@ public class CreateAccountUI extends JFrame {
 		java.awt.Image newpass = new ImageIcon("NewPass.png").getImage();
 		lblEnter.setIcon(new ImageIcon(newpass));
 		
-		password_input = new JTextField();
+		password_input = new JPasswordField();
 		password_input.setBounds(24, 109, 403, 24);
 		contentPane.add(password_input);
 		password_input.setColumns(10);
