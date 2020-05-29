@@ -7,6 +7,7 @@ public class Electric extends Pokemon
 		name = n;
 		ID = i;
 		type = "electric";
+		flavors = new String[]{"dry","spicy"};
 		weak = new String[]{"fire","grass","flying","poison","bug","dragon","steel"};
 		strength = new String[]{"water","ground","rock"};
 	}

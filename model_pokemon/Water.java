@@ -7,6 +7,7 @@ public class Water extends Pokemon
 		name = n;
 		ID = i;
 		type = "water";
+		flavors = new String[]{"sweet","bitter","sour"};
 		weak = new String[]{"ice","grass"};
 		strength = new String[]{"fire","ground"};
 	}

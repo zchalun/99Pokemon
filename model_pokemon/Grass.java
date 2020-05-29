@@ -7,6 +7,8 @@ public class Grass extends Pokemon{
 		name = n;
 		ID = i;
 		type = "grass";
+		flavors = new String[]{"sweet","sour"};
+		flavors = new String[]{"sweet","sour"};
 		weak = new String[]{"fire","grass","flying","poison","bug","dragon","steel"};
 		strength = new String[]{"water","ground","rock"};
 	}

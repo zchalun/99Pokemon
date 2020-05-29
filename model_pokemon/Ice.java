@@ -7,6 +7,7 @@ public class Ice extends Pokemon
 		name = n;
 		ID = i;
 		type = "Ice";
+		flavors = new String[]{"dry","sour"};
 		weak = new String[]{"steel"};
 		strength = new String[]{"water"};
 	}
