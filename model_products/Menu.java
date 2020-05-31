@@ -3,7 +3,7 @@ package model_products;
 import java.util.*;
 public class Menu {
 
-	ArrayList<Food> MenuSelections = new ArrayList<Food>();
+	public ArrayList<Food> MenuSelections = new ArrayList<Food>();
 	public Menu()
 	{
 		//all gen 3 berries

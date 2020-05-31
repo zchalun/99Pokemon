@@ -32,7 +32,7 @@ public class MenuUI extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MainMenu frame = new MainMenu();
+					MenuUI frame = new MenuUI();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
