@@ -8,7 +8,7 @@ public class Poffin extends Food{
 		type = "poffin";
 		flavor = b.getFlavor();
 		price = b.getPrice() + 100;
-		ID = b.getID()+35;
+		ID = b.getID()+5;
 		desc = "a delicious " + b.getName() + " flavored poffin!";
 	}
 }
