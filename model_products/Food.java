@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public abstract class Food {
+public class Food {
 	protected String name; // product name
 	protected String flavor; //product flavor
 	protected String type; //type of food, eg berry
@@ -20,6 +20,11 @@ public abstract class Food {
 		price = 1000000.00; //placeholder
 	}
 	
+	public Food (String name, double price)
+	{
+		this.name = name;
+		this.price = price;
+	}
 	
 	public String getName() {
 		return name;
