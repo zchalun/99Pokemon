@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import model_pokemon.PokeDex;
+import model_products.Menu;
 
 import java.awt.BorderLayout;
 import javax.swing.JButton;
@@ -17,6 +18,8 @@ import javax.swing.JCheckBox;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
+import java.awt.Font;
 
 public class MainMenu extends JFrame {
 
@@ -84,7 +87,106 @@ public class MainMenu extends JFrame {
 		LoginButton.setBackground(new java.awt.Color(36,104,177));
 		LoginButton.setIcon(new ImageIcon(login));
 		
-		JButton btnReservationTest = new JButton("add new reservation test");
+		JPanel panel_sort = new JPanel();
+		panel_sort.setBounds(26, 112, 194, 591);
+		getContentPane().add(panel_sort);
+		panel_sort.setLayout(null);
+		
+		JLabel lblType = new JLabel("Select Type:");
+		lblType.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblType.setBounds(10, 55, 182, 59);
+		panel_sort.add(lblType);
+		
+		JCheckBox chckbxBug = new JCheckBox("Bug\r\n");
+		chckbxBug.setBounds(20, 120, 93, 21);
+		panel_sort.add(chckbxBug);
+		
+		JCheckBox chckbxDragon = new JCheckBox("Dragon");
+		chckbxDragon.setBounds(20, 142, 93, 21);
+		panel_sort.add(chckbxDragon);
+		
+		JCheckBox chckbxElectric = new JCheckBox("Electric");
+		chckbxElectric.setBounds(20, 165, 93, 21);
+		panel_sort.add(chckbxElectric);
+		
+		JCheckBox chckbxFighting = new JCheckBox("Fighting");
+		chckbxFighting.setBounds(20, 185, 93, 21);
+		panel_sort.add(chckbxFighting);
+		
+		JCheckBox chckbxFire = new JCheckBox("Fire");
+		chckbxFire.setBounds(20, 208, 93, 21);
+		panel_sort.add(chckbxFire);
+		
+		JCheckBox chckbxFlying = new JCheckBox("Flying");
+		chckbxFlying.setBounds(20, 231, 93, 21);
+		panel_sort.add(chckbxFlying);
+		
+		JCheckBox chckbxGhost = new JCheckBox("Ghost");
+		chckbxGhost.setBounds(20, 254, 93, 21);
+		panel_sort.add(chckbxGhost);
+		
+		JCheckBox chckbxGrass = new JCheckBox("Grass");
+		chckbxGrass.setBounds(20, 277, 93, 21);
+		panel_sort.add(chckbxGrass);
+		
+		JCheckBox chckbxGround = new JCheckBox("Ground");
+		chckbxGround.setBounds(20, 300, 93, 21);
+		panel_sort.add(chckbxGround);
+		
+		JCheckBox chckbxIce = new JCheckBox("Ice");
+		chckbxIce.setBounds(20, 323, 93, 21);
+		panel_sort.add(chckbxIce);
+		
+		JCheckBox chckbxNormal = new JCheckBox("Normal");
+		chckbxNormal.setBounds(20, 346, 93, 21);
+		panel_sort.add(chckbxNormal);
+		
+		JCheckBox chckbxPoison = new JCheckBox("Poison");
+		chckbxPoison.setBounds(20, 369, 93, 21);
+		panel_sort.add(chckbxPoison);
+		
+		JCheckBox chckbxPsychic = new JCheckBox("Psychic");
+		chckbxPsychic.setBounds(20, 392, 93, 21);
+		panel_sort.add(chckbxPsychic);
+		
+		JCheckBox chckbxRock = new JCheckBox("Rock");
+		chckbxRock.setBounds(20, 415, 93, 21);
+		panel_sort.add(chckbxRock);
+		
+		JCheckBox chckbxSteel = new JCheckBox("Steel");
+		chckbxSteel.setBounds(20, 438, 93, 21);
+		panel_sort.add(chckbxSteel);
+		
+		JCheckBox chckbxWater = new JCheckBox("Water");
+		chckbxWater.setBounds(20, 461, 93, 21);
+		panel_sort.add(chckbxWater);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(230, 114, 931, 589);
+		getContentPane().add(scrollPane);
+		
+		JPanel panel_menu = new JPanel();
+		scrollPane.setViewportView(panel_menu);
+		panel_menu.setLayout(null);
+	
+		
+		// test code for adding buttons, currently adds first 4 berries
+		int j=0;
+		int i=10;
+		Menu newMenu = new Menu();
+		while (i<521 && j<4)
+		{
+			JButton btnNewButton = new JButton(newMenu.MenuSelections.get(j).getName());
+			btnNewButton.setBounds(i, 10, 155, 149);
+			panel_menu.add(btnNewButton);
+			i+=170;
+			j++;
+		}
+		
+		
+		
+		// Reservation test buttons:
+		/*JButton btnReservationTest = new JButton("add new reservation test");
 		btnReservationTest.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				Reservations.AddReservationsGUI.main(null);
@@ -118,7 +220,10 @@ public class MainMenu extends JFrame {
 			}
 		});
 		btnNewButton_2.setBounds(655, 109, 208, 129);
-		getContentPane().add(btnNewButton_2);
+		getContentPane().add(btnNewButton_2);*/
+		
+		
+		
 		
 		/*//MENU BUTTONS (wip)
 		JPanel panel_1 = new JPanel();
