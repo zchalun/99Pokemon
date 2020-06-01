@@ -15,6 +15,7 @@ import javax.swing.border.EmptyBorder;
 
 import Reservations.AddReservationsGUI;
 import Reservations.ManageReservations;
+import model_products.Food;
 
 public class ProductViewUI extends JFrame {
 
@@ -27,11 +28,11 @@ public class ProductViewUI extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void main(Food f) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ProductViewUI frame = new ProductViewUI();
+					ProductViewUI frame = new ProductViewUI(f);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +44,7 @@ public class ProductViewUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ProductViewUI() {
+	public ProductViewUI(Food f) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 466, 328);
 		contentPane = new JPanel();
@@ -60,30 +61,33 @@ public class ProductViewUI extends JFrame {
 		name_display.setEditable(false);
 		contentPane.add(name_display);
 		name_display.setColumns(10);
+		name_display.setText(f.getName());
 		
 		price_display = new JTextField();
 		price_display.setBounds(6, 72, 438, 26);
 		price_display.setEditable(false);
 		contentPane.add(price_display);
 		price_display.setColumns(10);
+		price_display.setText(String.valueOf(f.getPrice()) + " P");
 		
 		desc_display = new JTextField();
 		desc_display.setBounds(6, 119, 438, 26);
 		desc_display.setEditable(false);
 		contentPane.add(desc_display);
 		desc_display.setColumns(10);
+		desc_display.setText(f.getDesc());
 		
-		JLabel lblEnterTotalNumber = new JLabel("Dish price");
-		lblEnterTotalNumber.setBounds(6, 48, 342, 26);
-		contentPane.add(lblEnterTotalNumber);
+		JLabel lblPrice = new JLabel("Dish price (Pokédollars)");
+		lblPrice.setBounds(6, 48, 342, 26);
+		contentPane.add(lblPrice);
 		
-		JLabel lblEnterTimeFor = new JLabel("Dish description");
-		lblEnterTimeFor.setBounds(6, 98, 414, 26);
-		contentPane.add(lblEnterTimeFor);
+		JLabel lblDesc = new JLabel("Dish description");
+		lblDesc.setBounds(6, 98, 414, 26);
+		contentPane.add(lblDesc);
 		
-		JLabel lblNewLabel = new JLabel("Dish Picture");
-		lblNewLabel.setBounds(6, 155, 79, 13);
-		contentPane.add(lblNewLabel);
+		JLabel lblPicture = new JLabel("Dish Picture");
+		lblPicture.setBounds(6, 155, 79, 13);
+		contentPane.add(lblPicture);
 			
 	}
 }

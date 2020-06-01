@@ -453,7 +453,7 @@ public class MainMenu extends JFrame {
 		System.out.println(newMenu.MenuSelections.size());
 		for (int j = 0; j < newMenu.MenuSelections.size(); j++)
 		{
-				
+				Food k = newMenu.MenuSelections.get(j);
 			//creates a new row when it gets too full
 			if (x > 780)
 			{
@@ -464,6 +464,12 @@ public class MainMenu extends JFrame {
 			JButton btnNewButton = new JButton(newMenu.MenuSelections.get(j).getName());
 			btnNewButton.setBounds(x, y, 110, 110);
 			panel_menu.add(btnNewButton);
+			btnNewButton.addActionListener(new ActionListener() {
+				
+	            public void actionPerformed(ActionEvent e) {
+	            	ProductViewUI.main(k);
+	            }
+	        });
 			x+= 150;
 		}
 		
