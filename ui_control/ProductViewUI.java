@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -46,7 +47,7 @@ public class ProductViewUI extends JFrame {
 	 */
 	public ProductViewUI(Food f) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 466, 328);
+		setBounds(100, 100, 466, 500);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -88,6 +89,13 @@ public class ProductViewUI extends JFrame {
 		JLabel lblPicture = new JLabel("Dish Picture");
 		lblPicture.setBounds(6, 155, 79, 13);
 		contentPane.add(lblPicture);
+		
+		JLabel foodPic = new JLabel("");
+		java.awt.Image foodimage = new ImageIcon(f.getName() + ".png").getImage();
+		contentPane.setLayout(null);
+		contentPane.add(foodPic);
+		foodPic.setIcon(new ImageIcon(foodimage));
+		foodPic.setBounds(100, 155, 320, 298);
 			
 	}
 }
