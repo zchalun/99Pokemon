@@ -5,7 +5,7 @@ public class PokeDex
 {
 	ArrayList<Pokemon> allPokemon = new ArrayList<Pokemon>();
 	public PokeDex()
-	{
+	{/*
 		allPokemon.add(new Grass("Bulbasaur",1));
 		allPokemon.add(new Grass("Ivysaur",2));
 		allPokemon.add(new Grass("Venusaur",3));
@@ -216,7 +216,7 @@ public class PokeDex
 		allPokemon.add(new Dragon("Dragonite",149));
 		allPokemon.add(new Flying("Dragonite",149)); //double
 		allPokemon.add(new Psychic("Mewtwo",150));
-		allPokemon.add(new Psychic("Mew",151));		
+		allPokemon.add(new Psychic("Mew",151));	*/	
 	}
 	
 	public ArrayList<Pokemon> getList()
