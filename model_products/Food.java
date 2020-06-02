@@ -5,10 +5,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 
-public abstract class Food {
+public class Food {
 	protected String name; // product name
 	protected String flavor; //product flavor
-	protected String[] type; //array of pokemon types compatible
+	protected String type; //type of food, eg berry
+	//protected String[] type; //array of pokemon types compatible
 	protected double price; //product price
 	protected int ID; // product ID
 	protected String desc; //product description
@@ -19,6 +20,11 @@ public abstract class Food {
 		price = 1000000.00; //placeholder
 	}
 	
+	public Food (String name, double price)
+	{
+		this.name = name;
+		this.price = price;
+	}
 	
 	public String getName() {
 		return name;
@@ -45,7 +51,7 @@ public abstract class Food {
 		return desc;
 	}
 	
-	public String[] getType() {
+	public String getType() {
 		return type;
 	}
 	

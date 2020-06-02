@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -20,16 +21,16 @@ import com.amazonaws.services.dynamodbv2.document.Item;
 import com.amazonaws.services.dynamodbv2.document.Table;
 import com.amazonaws.services.dynamodbv2.model.ScanRequest;
 import com.amazonaws.services.dynamodbv2.model.ScanResult;
-
-import Reservations.ParseSearch;
 import java.awt.Color;
+import javax.swing.DropMode;
+import javax.swing.ImageIcon;
 
 public class LoginPageUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField username_input;
-	private JTextField password_input;
+	private JPasswordField password_input;
 	private JTextField loginStatus;
 	
 	/**
@@ -52,28 +53,38 @@ public class LoginPageUI extends JFrame {
 	 * Create the frame.
 	 */
 	public LoginPageUI() {
+		setBackground(Color.BLACK);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 461, 259);
+		setBounds(100, 100, 515, 330);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblReservation = new JLabel("Enter username");
-		lblReservation.setBounds(6, 0, 184, 26);
+		JLabel lblReservation = new JLabel("");
+		lblReservation.setForeground(Color.WHITE);
+		lblReservation.setBounds(17, 10, 122, 30);
 		contentPane.add(lblReservation);
+		java.awt.Image user = new ImageIcon("username.png").getImage();
+		lblReservation.setIcon(new ImageIcon(user));
 		
 		username_input = new JTextField();
-		username_input.setBounds(6, 22, 438, 26);
+		username_input.setBounds(17, 44, 465, 30);
 		contentPane.add(username_input);
 		username_input.setColumns(10);
+		username_input.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
-		password_input = new JTextField();
-		password_input.setBounds(6, 71, 438, 26);
+		password_input = new JPasswordField();
+		password_input.setBounds(17, 112, 465, 30);
 		contentPane.add(password_input);
 		password_input.setColumns(10);
+		password_input.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
-		JButton buttonLogin = new JButton("Login");
+		JButton buttonLogin = new JButton("");
+		buttonLogin.setBounds(176, 155, 149, 48);
+		java.awt.Image login = new ImageIcon("Login1.png").getImage();
+		buttonLogin.setIcon(new ImageIcon(login));
 		buttonLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { //checking 99PokemonAccounts database for credentials
 				ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();
@@ -116,31 +127,41 @@ public class LoginPageUI extends JFrame {
 			}
 
 		});
-		buttonLogin.setBounds(97, 107, 248, 29);
 		contentPane.add(buttonLogin);
 	
 		
-		JLabel lblEnter = new JLabel("Enter password");
-		lblEnter.setBounds(6, 47, 184, 26);
+		JLabel lblEnter = new JLabel("");
+		lblEnter.setForeground(Color.WHITE);
+		lblEnter.setBounds(17, 84, 122, 30);
 		contentPane.add(lblEnter);
+		java.awt.Image pass = new ImageIcon("Password.png").getImage();
+		lblEnter.setIcon(new ImageIcon(pass));
 		
-		JButton btnNewButton = new JButton("Create an Account");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setBounds(230, 252, 198, 36);
+		java.awt.Image create = new ImageIcon("Create.png").getImage();
+		btnNewButton.setIcon(new ImageIcon(create));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CreateAccountUI.main(null);
 			}
 		});
-		btnNewButton.setBounds(221, 182, 167, 17);
 		contentPane.add(btnNewButton);
 		
 		JLabel lblNewAccount = new JLabel("New to 99Pokemon?:");
-		lblNewAccount.setBounds(80, 184, 148, 13);
+		lblNewAccount.setForeground(Color.WHITE);
+		lblNewAccount.setBounds(62, 255, 160, 30);
 		contentPane.add(lblNewAccount);
+		java.awt.Image New = new ImageIcon("New.png").getImage();
+		lblNewAccount.setIcon(new ImageIcon(New));
 		
 		loginStatus = new JTextField();
 		loginStatus.setEditable(false);
+		loginStatus.setBackground(Color.BLACK);
+		loginStatus.setForeground(Color.WHITE);
+		loginStatus.setBounds(17, 212, 465, 30);
 		loginStatus.setColumns(10);
-		loginStatus.setBounds(6, 146, 438, 20);
+		loginStatus.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		contentPane.add(loginStatus);
 			
 	}

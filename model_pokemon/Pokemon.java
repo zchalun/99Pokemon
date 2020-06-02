@@ -5,11 +5,19 @@ public abstract class Pokemon {
 		protected int ID; // pokemon ID, ie bulbasaur 1, ivysaur 2, etc
 		protected String type;
 		protected String[] weak;
+		protected int[] flavors;
 		protected String[] strength; 
 		protected String[] no_effect;
 		
-		public Pokemon() {
-			name = "default pokemon"; //placeholder
+		protected int bitter = 0;
+		protected int spicy = 1;
+		protected int sour = 2;
+		protected int sweet = 3;
+		protected int dry = 4;
+		
+		public Pokemon(String name) {
+			this.name = name;
+			//name = "default pokemon"; //placeholder
 			ID = 10000; //placeholder
 		}
 		
@@ -41,5 +49,9 @@ public abstract class Pokemon {
 		
 		public String[] getNoEffect() {
 			return no_effect;
+		}
+		
+		public int[] getFlavors() {
+			return flavors;
 		}
 	}
