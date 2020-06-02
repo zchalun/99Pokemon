@@ -188,11 +188,11 @@ public class MainMenu extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
             	
-            	Fighting f = new Fighting();
+            	Fighting fi = new Fighting();
     			
-    			if (checkedPokemon.contains(f))
+    			if (checkedPokemon.contains(fi))
     			panel_menu.removeAll();
-    			calculateFlavors(f);
+    			calculateFlavors(fi);
     			displayMenu(panel_menu);
             }
         });
