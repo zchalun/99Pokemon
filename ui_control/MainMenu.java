@@ -411,6 +411,11 @@ public class MainMenu extends JFrame {
 	            	ProductViewUI.main(k);
 	            }
 	        });
+			//picture on buttons
+			java.awt.Image foodimage = new ImageIcon("pics/" + k.getName() + ".png").getImage();
+			btnNewButton.setIcon(new ImageIcon(foodimage));
+			btnNewButton.setBounds(x, y, 110, 110);
+			
 			x+= 150;
 		}
 		
