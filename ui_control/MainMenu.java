@@ -381,67 +381,6 @@ public class MainMenu extends JFrame {
 	
 		//displays all 30 food options
 		displayMenu(panel_menu);
-		
-		
-<<<<<<< HEAD
-=======
-		
-		// Reservation test buttons:
-		/*JButton btnReservationTest = new JButton("add new reservation test");
-		btnReservationTest.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Reservations.AddReservationsGUI.main(null);
-			}
-		});
-		btnReservationTest.setBounds(25, 109, 195, 129);
-		getContentPane().add(btnReservationTest);
-		
-		JButton btnNewButton = new JButton("search for reservation test");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservations.SearchReservationGUI.main(null);
-			}
-		});
-		btnNewButton.setBounds(230, 109, 208, 129);
-		getContentPane().add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Change time of res test");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservations.ChangeReservationTimeGUI.main(null);
-			}
-		});
-		btnNewButton_1.setBounds(448, 116, 195, 114);
-		getContentPane().add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("delete res test");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservations.DeleteReservationGUI.main(null);
-			}
-		});
-		btnNewButton_2.setBounds(655, 109, 208, 129);
-		getContentPane().add(btnNewButton_2);*/
-		
-		
-		
-		
-		/*//MENU BUTTONS (wip)
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(0, 94, 1200, 58);
-		getContentPane().add(panel_1);
-		
-		JButton Home = new JButton("Home");
-		panel_1.add(Home);
-		Home.setBounds(0, 94, 240, 58);
-		panel.add(Home);
-		Home.setBackground(Color.WHITE);
-		java.awt.Image home = new ImageIcon("pics/Home.png").getImage();
-		Home.setIcon(new ImageIcon(home));
-		*/
-		
-		
->>>>>>> branch 'master' of https://github.com/zchalun/99Pokemon.git
 	}
 
 	
