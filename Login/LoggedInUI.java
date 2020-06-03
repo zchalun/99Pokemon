@@ -105,22 +105,24 @@ public class LoggedInUI extends JFrame {
 		// Reservation buttons:
 		JButton btnReservationTest = new JButton("Create a Reservation");
 		btnReservationTest.setFont(new Font("Perpetua Titling MT", Font.PLAIN, 25));
-		btnReservationTest.setBounds(23, 91, 514, 168);
+		btnReservationTest.setBounds(23, 91, 486, 168);
 		panel_1.add(btnReservationTest);
 		
-		JButton btnNewButton = new JButton("CHECK MY RESERVATION");
+		JButton btnNewButton = new JButton();
 		btnNewButton.setFont(new Font("Perpetua Titling MT", Font.PLAIN, 25));
-		btnNewButton.setBounds(544, 91, 500, 168);
+		btnNewButton.setBounds(544, 91, 486, 168);
 		panel_1.add(btnNewButton);
+		java.awt.Image check = new ImageIcon("pics/Check reservation.png").getImage();
+		btnNewButton.setIcon(new ImageIcon(check));
 		
 		JButton btnNewButton_1 = new JButton("CHANGE MY RESERVATION TIME");
 		btnNewButton_1.setFont(new Font("Perpetua Titling MT", Font.PLAIN, 25));
-		btnNewButton_1.setBounds(23, 272, 514, 182);
+		btnNewButton_1.setBounds(23, 272, 486, 168);
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("DELETE MY RESERVATION");
 		btnNewButton_2.setFont(new Font("Perpetua Titling MT", Font.PLAIN, 25));
-		btnNewButton_2.setBounds(544, 272, 486, 182);
+		btnNewButton_2.setBounds(544, 272, 486, 168);
 		panel_1.add(btnNewButton_2);
 		
 		JLabel lblNewLabel = new JLabel("Reservation Management Pane");
