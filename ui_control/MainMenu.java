@@ -381,70 +381,11 @@ public class MainMenu extends JFrame {
 	
 		//displays all 30 food options
 		displayMenu(panel_menu);
-		
-		
-		
-		// Reservation test buttons:
-		/*JButton btnReservationTest = new JButton("add new reservation test");
-		btnReservationTest.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Reservations.AddReservationsGUI.main(null);
-			}
-		});
-		btnReservationTest.setBounds(25, 109, 195, 129);
-		getContentPane().add(btnReservationTest);
-		
-		JButton btnNewButton = new JButton("search for reservation test");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservations.SearchReservationGUI.main(null);
-			}
-		});
-		btnNewButton.setBounds(230, 109, 208, 129);
-		getContentPane().add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Change time of res test");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservations.ChangeReservationTimeGUI.main(null);
-			}
-		});
-		btnNewButton_1.setBounds(448, 116, 195, 114);
-		getContentPane().add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("delete res test");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservations.DeleteReservationGUI.main(null);
-			}
-		});
-		btnNewButton_2.setBounds(655, 109, 208, 129);
-		getContentPane().add(btnNewButton_2);*/
-		
-		
-		
-		
-		/*//MENU BUTTONS (wip)
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(0, 94, 1200, 58);
-		getContentPane().add(panel_1);
-		
-		JButton Home = new JButton("Home");
-		panel_1.add(Home);
-		Home.setBounds(0, 94, 240, 58);
-		panel.add(Home);
-		Home.setBackground(Color.WHITE);
-		java.awt.Image home = new ImageIcon("pics/Home.png").getImage();
-		Home.setIcon(new ImageIcon(home));
-		*/
-		
-		
 	}
 
 	
 	public void displayMenu(JPanel panel_menu)
 	{
-		// test code for adding buttons, currently adds first 4 berries
 
 		int x = 30;
 		int y = 10;
@@ -470,6 +411,11 @@ public class MainMenu extends JFrame {
 	            	ProductViewUI.main(k);
 	            }
 	        });
+			//picture on buttons
+			java.awt.Image foodimage = new ImageIcon("pics/" + k.getName() + ".png").getImage();
+			btnNewButton.setIcon(new ImageIcon(foodimage));
+			btnNewButton.setBounds(x, y, 110, 110);
+			
 			x+= 150;
 		}
 		
