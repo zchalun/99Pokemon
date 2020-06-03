@@ -403,7 +403,8 @@ public class MainMenu extends JFrame {
 				y += 113;
 			}
 					
-			JButton btnNewButton = new JButton(); //ERASE THIS LINE LATER?
+			JButton btnNewButton = new JButton(newMenu.MenuSelections.get(j).getName()); //ERASE THE LINE IN THE PARANTHESES WHEN RUNNING (see below)
+			//newMenu.MenuSelections.get(j).getName()
 			btnNewButton.setBounds(x, y, 110, 110);
 			panel_menu.add(btnNewButton);
 			btnNewButton.addActionListener(new ActionListener() {
