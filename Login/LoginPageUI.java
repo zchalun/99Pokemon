@@ -66,7 +66,7 @@ public class LoginPageUI extends JFrame {
 		lblReservation.setForeground(Color.WHITE);
 		lblReservation.setBounds(17, 10, 122, 30);
 		contentPane.add(lblReservation);
-		java.awt.Image user = new ImageIcon("username.png").getImage();
+		java.awt.Image user = new ImageIcon("pics/username.png").getImage();
 		lblReservation.setIcon(new ImageIcon(user));
 		
 		username_input = new JTextField();
@@ -83,7 +83,7 @@ public class LoginPageUI extends JFrame {
 		
 		JButton buttonLogin = new JButton("");
 		buttonLogin.setBounds(176, 155, 149, 48);
-		java.awt.Image login = new ImageIcon("Login1.png").getImage();
+		java.awt.Image login = new ImageIcon("pics/Login1.png").getImage();
 		buttonLogin.setIcon(new ImageIcon(login));
 		buttonLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { //checking 99PokemonAccounts database for credentials
@@ -134,12 +134,12 @@ public class LoginPageUI extends JFrame {
 		lblEnter.setForeground(Color.WHITE);
 		lblEnter.setBounds(17, 84, 122, 30);
 		contentPane.add(lblEnter);
-		java.awt.Image pass = new ImageIcon("Password.png").getImage();
+		java.awt.Image pass = new ImageIcon("pics/Password.png").getImage();
 		lblEnter.setIcon(new ImageIcon(pass));
 		
 		JButton btnNewButton = new JButton("");
 		btnNewButton.setBounds(230, 252, 198, 36);
-		java.awt.Image create = new ImageIcon("Create.png").getImage();
+		java.awt.Image create = new ImageIcon("pics/Create.png").getImage();
 		btnNewButton.setIcon(new ImageIcon(create));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -152,7 +152,7 @@ public class LoginPageUI extends JFrame {
 		lblNewAccount.setForeground(Color.WHITE);
 		lblNewAccount.setBounds(62, 255, 160, 30);
 		contentPane.add(lblNewAccount);
-		java.awt.Image New = new ImageIcon("New.png").getImage();
+		java.awt.Image New = new ImageIcon("pics/New.png").getImage();
 		lblNewAccount.setIcon(new ImageIcon(New));
 		
 		loginStatus = new JTextField();
