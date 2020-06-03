@@ -87,14 +87,14 @@ public class MainMenu extends JFrame {
 		panel.setBackground(new Color(36,104,177));
 		
 		JLabel logo = new JLabel("");
-		java.awt.Image logoimage = new ImageIcon("99-Pok.png").getImage();
+		java.awt.Image logoimage = new ImageIcon("pics/99-Pok.png").getImage();
 		panel.setLayout(null);
 		panel.add(logo);
 		logo.setIcon(new ImageIcon(logoimage));
 		logo.setBounds(0, 0, 240, 94);
 		
 		JButton Advertisement = new JButton("");
-		java.awt.Image ad = new ImageIcon("Ad.png").getImage();
+		java.awt.Image ad = new ImageIcon("pics/Ad.png").getImage();
 		Advertisement.setBounds(240, 0, 720, 94);
 		panel.add(Advertisement);
 		Advertisement.setBackground(new java.awt.Color(36,104,177));
@@ -116,7 +116,7 @@ public class MainMenu extends JFrame {
 				Login.LoginPageUI.main(null);
 			}
 		});
-		java.awt.Image login = new ImageIcon("Login.png").getImage();
+		java.awt.Image login = new ImageIcon("pics/Login.png").getImage();
 		LoginButton.setBounds(960, 0, 240, 94);
 		panel.add(LoginButton);
 		LoginButton.setBackground(new java.awt.Color(36,104,177));
@@ -434,7 +434,7 @@ public class MainMenu extends JFrame {
 		Home.setBounds(0, 94, 240, 58);
 		panel.add(Home);
 		Home.setBackground(Color.WHITE);
-		java.awt.Image home = new ImageIcon("Home.png").getImage();
+		java.awt.Image home = new ImageIcon("pics/Home.png").getImage();
 		Home.setIcon(new ImageIcon(home));
 		*/
 		
