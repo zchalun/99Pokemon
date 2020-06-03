@@ -91,7 +91,7 @@ public class ProductViewUI extends JFrame {
 		contentPane.add(lblPicture);
 		
 		JLabel foodPic = new JLabel("");
-		java.awt.Image foodimage = new ImageIcon(f.getName() + ".png").getImage();
+		java.awt.Image foodimage = new ImageIcon("pics/" + f.getName() + ".png").getImage();
 		contentPane.setLayout(null);
 		contentPane.add(foodPic);
 		foodPic.setIcon(new ImageIcon(foodimage));

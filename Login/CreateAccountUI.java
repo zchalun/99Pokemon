@@ -56,7 +56,7 @@ public class CreateAccountUI extends JFrame {
 		JLabel lblReservation = new JLabel("");
 		lblReservation.setBounds(24, 23, 143, 24);
 		contentPane.add(lblReservation);
-		java.awt.Image New = new ImageIcon("NewUser.png").getImage();
+		java.awt.Image New = new ImageIcon("pics/NewUser.png").getImage();
 		lblReservation.setIcon(new ImageIcon(New));
 		
 		username_input = new JTextField();
@@ -68,7 +68,7 @@ public class CreateAccountUI extends JFrame {
 		JLabel lblEnter = new JLabel("");
 		lblEnter.setBounds(24, 84, 143, 29);
 		contentPane.add(lblEnter);
-		java.awt.Image newpass = new ImageIcon("NewPass.png").getImage();
+		java.awt.Image newpass = new ImageIcon("pics/NewPass.png").getImage();
 		lblEnter.setIcon(new ImageIcon(newpass));
 		
 		password_input = new JPasswordField();
@@ -78,7 +78,7 @@ public class CreateAccountUI extends JFrame {
 		password_input.setBorder(javax.swing.BorderFactory.createEmptyBorder());
 		
 		JButton buttonCreate = new JButton("");
-		java.awt.Image create = new ImageIcon("Create1.png").getImage();
+		java.awt.Image create = new ImageIcon("pics/Create1.png").getImage();
 		buttonCreate.setIcon(new ImageIcon(create));
 		buttonCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
