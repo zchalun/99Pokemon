@@ -40,6 +40,7 @@ import Login.LoggedInUI;
 import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 import java.awt.Font;
+import java.awt.Image;
 import java.util.*;
 import model_pokemon.*;
 
@@ -402,7 +403,7 @@ public class MainMenu extends JFrame {
 				y += 113;
 			}
 					
-			JButton btnNewButton = new JButton(newMenu.MenuSelections.get(j).getName());
+			JButton btnNewButton = new JButton(); //ERASE THIS LINE LATER?
 			btnNewButton.setBounds(x, y, 110, 110);
 			panel_menu.add(btnNewButton);
 			btnNewButton.addActionListener(new ActionListener() {
@@ -413,7 +414,8 @@ public class MainMenu extends JFrame {
 	        });
 			//picture on buttons
 			java.awt.Image foodimage = new ImageIcon("pics/" + k.getName() + ".png").getImage();
-			btnNewButton.setIcon(new ImageIcon(foodimage));
+			Image newImage = foodimage.getScaledInstance(110, 110, Image.SCALE_DEFAULT);
+			btnNewButton.setIcon(new ImageIcon(newImage));
 			btnNewButton.setBounds(x, y, 110, 110);
 			
 			x+= 150;
