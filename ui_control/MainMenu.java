@@ -40,6 +40,7 @@ import Login.LoggedInUI;
 import javax.swing.SwingConstants;
 import javax.swing.JScrollPane;
 import java.awt.Font;
+import java.awt.Image;
 import java.util.*;
 import model_pokemon.*;
 
@@ -87,14 +88,14 @@ public class MainMenu extends JFrame {
 		panel.setBackground(new Color(36,104,177));
 		
 		JLabel logo = new JLabel("");
-		java.awt.Image logoimage = new ImageIcon("99-Pok.png").getImage();
+		java.awt.Image logoimage = new ImageIcon("pics/99-Pok.png").getImage();
 		panel.setLayout(null);
 		panel.add(logo);
 		logo.setIcon(new ImageIcon(logoimage));
 		logo.setBounds(0, 0, 240, 94);
 		
 		JButton Advertisement = new JButton("");
-		java.awt.Image ad = new ImageIcon("Ad.png").getImage();
+		java.awt.Image ad = new ImageIcon("pics/Ad.png").getImage();
 		Advertisement.setBounds(240, 0, 720, 94);
 		panel.add(Advertisement);
 		Advertisement.setBackground(new java.awt.Color(36,104,177));
@@ -116,7 +117,7 @@ public class MainMenu extends JFrame {
 				Login.LoginPageUI.main(null);
 			}
 		});
-		java.awt.Image login = new ImageIcon("Login.png").getImage();
+		java.awt.Image login = new ImageIcon("pics/Login.png").getImage();
 		LoginButton.setBounds(960, 0, 240, 94);
 		panel.add(LoginButton);
 		LoginButton.setBackground(new java.awt.Color(36,104,177));
@@ -381,70 +382,11 @@ public class MainMenu extends JFrame {
 	
 		//displays all 30 food options
 		displayMenu(panel_menu);
-		
-		
-		
-		// Reservation test buttons:
-		/*JButton btnReservationTest = new JButton("add new reservation test");
-		btnReservationTest.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				Reservations.AddReservationsGUI.main(null);
-			}
-		});
-		btnReservationTest.setBounds(25, 109, 195, 129);
-		getContentPane().add(btnReservationTest);
-		
-		JButton btnNewButton = new JButton("search for reservation test");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservations.SearchReservationGUI.main(null);
-			}
-		});
-		btnNewButton.setBounds(230, 109, 208, 129);
-		getContentPane().add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Change time of res test");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservations.ChangeReservationTimeGUI.main(null);
-			}
-		});
-		btnNewButton_1.setBounds(448, 116, 195, 114);
-		getContentPane().add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("delete res test");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Reservations.DeleteReservationGUI.main(null);
-			}
-		});
-		btnNewButton_2.setBounds(655, 109, 208, 129);
-		getContentPane().add(btnNewButton_2);*/
-		
-		
-		
-		
-		/*//MENU BUTTONS (wip)
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(0, 94, 1200, 58);
-		getContentPane().add(panel_1);
-		
-		JButton Home = new JButton("Home");
-		panel_1.add(Home);
-		Home.setBounds(0, 94, 240, 58);
-		panel.add(Home);
-		Home.setBackground(Color.WHITE);
-		java.awt.Image home = new ImageIcon("Home.png").getImage();
-		Home.setIcon(new ImageIcon(home));
-		*/
-		
-		
 	}
 
 	
 	public void displayMenu(JPanel panel_menu)
 	{
-		// test code for adding buttons, currently adds first 4 berries
 
 		int x = 30;
 		int y = 10;
@@ -461,7 +403,8 @@ public class MainMenu extends JFrame {
 				y += 113;
 			}
 					
-			JButton btnNewButton = new JButton(newMenu.MenuSelections.get(j).getName());
+			JButton btnNewButton = new JButton(); //ERASE THE LINE IN THE PARANTHESES WHEN RUNNING (see below)
+			//newMenu.MenuSelections.get(j).getName()
 			btnNewButton.setBounds(x, y, 110, 110);
 			panel_menu.add(btnNewButton);
 			btnNewButton.addActionListener(new ActionListener() {
@@ -470,6 +413,12 @@ public class MainMenu extends JFrame {
 	            	ProductViewUI.main(k);
 	            }
 	        });
+			//picture on buttons
+			java.awt.Image foodimage = new ImageIcon("pics/" + k.getName() + ".png").getImage();
+			Image newImage = foodimage.getScaledInstance(110, 110, Image.SCALE_DEFAULT);
+			btnNewButton.setIcon(new ImageIcon(newImage));
+			btnNewButton.setBounds(x, y, 110, 110);
+			
 			x+= 150;
 		}
 		

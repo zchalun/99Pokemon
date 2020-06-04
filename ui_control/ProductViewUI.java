@@ -1,6 +1,7 @@
 package ui_control;
 
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -91,10 +92,11 @@ public class ProductViewUI extends JFrame {
 		contentPane.add(lblPicture);
 		
 		JLabel foodPic = new JLabel("");
-		java.awt.Image foodimage = new ImageIcon(f.getName() + ".png").getImage();
+		java.awt.Image foodimage = new ImageIcon("pics/" + f.getName() + ".png").getImage();
+		Image newImage = foodimage.getScaledInstance(298, 298, Image.SCALE_DEFAULT);
 		contentPane.setLayout(null);
 		contentPane.add(foodPic);
-		foodPic.setIcon(new ImageIcon(foodimage));
+		foodPic.setIcon(new ImageIcon(newImage));
 		foodPic.setBounds(100, 155, 320, 298);
 			
 	}
