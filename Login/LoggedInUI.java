@@ -115,10 +115,12 @@ public class LoggedInUI extends JFrame {
 		java.awt.Image check = new ImageIcon("pics/Check reservation.png").getImage();
 		btnNewButton.setIcon(new ImageIcon(check));
 		
-		JButton btnNewButton_1 = new JButton("CHANGE MY RESERVATION TIME");
+		JButton btnNewButton_1 = new JButton();
 		btnNewButton_1.setFont(new Font("Perpetua Titling MT", Font.PLAIN, 25));
 		btnNewButton_1.setBounds(23, 272, 486, 168);
 		panel_1.add(btnNewButton_1);
+		java.awt.Image change = new ImageIcon("pics/Change reservation.png").getImage();
+		btnNewButton_1.setIcon(new ImageIcon(change));
 		
 		JButton btnNewButton_2 = new JButton("DELETE MY RESERVATION");
 		btnNewButton_2.setFont(new Font("Perpetua Titling MT", Font.PLAIN, 25));
