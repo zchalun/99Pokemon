@@ -58,20 +58,20 @@ public class Menu {
 		MenuSelections.add(new Drink("tea", "bitter", 250,15,"tastes good"));
 
 		//pokeblocks
-		//MenuSelections.add(new Pokeblock("black", "none", 50,77,"yum"));
-		/*MenuSelections.add(new Pokeblock("red", "spicy", 70,78,"yum"));
+		MenuSelections.add(new Pokeblock("black", "none", 50,77,"yum"));
+		MenuSelections.add(new Pokeblock("red", "spicy", 70,78,"yum"));
 		MenuSelections.add(new Pokeblock("blue", "dry", 70,79,"yum"));
 		MenuSelections.add(new Pokeblock("pink", "sweet", 70,80,"yum"));
 		MenuSelections.add(new Pokeblock("green", "bitter", 70,81,"yum"));
 		MenuSelections.add(new Pokeblock("yellow", "sour", 70,82,"yum"));
-		MenuSelections.add(new Pokeblock("gold", "none", 100,83,"yum"));*/
+		MenuSelections.add(new Pokeblock("gold", "none", 100,83,"yum"));
 		MenuSelections.add(new Pokeblock("purple", "spicy", 120,16,"yum"));
 		MenuSelections.add(new Pokeblock("indigo", "dry", 120,17,"yum"));
 		MenuSelections.add(new Pokeblock("brown", "sweet", 120,18,"yum"));
 		MenuSelections.add(new Pokeblock("liteblue", "bitter", 120,19,"yum"));
 		MenuSelections.add(new Pokeblock("olive", "sour", 120,20,"yum"));
-		/*MenuSelections.add(new Pokeblock("grey", "none", 150,89,"yum"));
-		MenuSelections.add(new Pokeblock("white", "none", 150,90,"yum"));*/
+		MenuSelections.add(new Pokeblock("grey", "none", 150,89,"yum"));
+		MenuSelections.add(new Pokeblock("white", "none", 150,90,"yum"));
 		
 		//poke puffs
 		MenuSelections.add(new PokePuff("basic sweet", "sweet", 150,21,"cute little cupcakes"));

@@ -43,6 +43,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.util.*;
 import model_pokemon.*;
+import javax.swing.ScrollPaneConstants;
 
 public class MainMenu extends JFrame {
 
@@ -103,12 +104,12 @@ public class MainMenu extends JFrame {
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setBounds(230, 114, 931, 589);
 		getContentPane().add(scrollPane);
 		
 		JPanel panel_menu = new JPanel();
 		scrollPane.setViewportView(panel_menu);
-		panel_menu.setLayout(null);
 		
 		
 		JButton LoginButton = new JButton("");
@@ -382,6 +383,7 @@ public class MainMenu extends JFrame {
 	
 		//displays all 30 food options
 		displayMenu(panel_menu);
+		panel_menu.setLayout(null);
 	}
 
 	
@@ -403,9 +405,9 @@ public class MainMenu extends JFrame {
 				y += 113;
 			}
 					
-			JButton btnNewButton = new JButton(); //ERASE THE LINE IN THE PARANTHESES WHEN RUNNING (see below)
+			JButton btnNewButton = new JButton(); //ERASE THE LINE IN THE PARENTHESES WHEN RUNNING (see below)
 			//newMenu.MenuSelections.get(j).getName()
-			btnNewButton.setBounds(x, y, 110, 110);
+			btnNewButton.setBounds(x, y, 110, 200);
 			panel_menu.add(btnNewButton);
 			btnNewButton.addActionListener(new ActionListener() {
 				
