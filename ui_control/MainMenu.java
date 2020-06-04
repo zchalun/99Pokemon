@@ -419,7 +419,7 @@ public class MainMenu extends JFrame {
 			btnNewButton.setIcon(new ImageIcon(newImage));
 			btnNewButton.setBounds(x, y, 110, 110);
 			
-			x+= 150;
+			x+= 150; 
 		}
 		
 		//refreshes the screen
