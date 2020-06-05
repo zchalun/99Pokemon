@@ -1,5 +1,6 @@
 package ui_control;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
@@ -105,6 +106,8 @@ public class MainMenu extends JFrame {
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+		scrollPane.setBorder(null);
 		scrollPane.setBounds(230, 114, 931, 589);
 		getContentPane().add(scrollPane);
 		
@@ -123,6 +126,7 @@ public class MainMenu extends JFrame {
 		panel.add(LoginButton);
 		LoginButton.setBackground(new java.awt.Color(36,104,177));
 		LoginButton.setIcon(new ImageIcon(login));
+	
 		
 		JPanel panel_sort = new JPanel();
 		panel_sort.setBounds(26, 112, 194, 591);
@@ -383,7 +387,17 @@ public class MainMenu extends JFrame {
 	
 		//displays all 30 food options
 		displayMenu(panel_menu);
-		panel_menu.setLayout(null);
+		GroupLayout gl_panel_menu = new GroupLayout(panel_menu);
+		gl_panel_menu.setHorizontalGroup(
+			gl_panel_menu.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 914, Short.MAX_VALUE)
+		);
+		gl_panel_menu.setVerticalGroup(
+			gl_panel_menu.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 589, Short.MAX_VALUE)
+		);
+		panel_menu.setLayout(gl_panel_menu);
+		panel_menu.setPreferredSize(new Dimension(100,100));
 	}
 
 	

@@ -26,6 +26,7 @@ public class ProductViewUI extends JFrame {
 	private JTextField name_display;
 	private JTextField price_display;
 	private JTextField desc_display;
+	private JTextField flavor_display;
 	
 	/**
 	 * Launch the application.
@@ -59,7 +60,7 @@ public class ProductViewUI extends JFrame {
 		contentPane.add(lblName);
 		
 		name_display = new JTextField();
-		name_display.setBounds(6, 22, 438, 26);
+		name_display.setBounds(6, 22, 220, 26);
 		name_display.setEditable(false);
 		contentPane.add(name_display);
 		name_display.setColumns(10);
@@ -98,6 +99,18 @@ public class ProductViewUI extends JFrame {
 		contentPane.add(foodPic);
 		foodPic.setIcon(new ImageIcon(newImage));
 		foodPic.setBounds(100, 155, 320, 298);
+		
+		JLabel lblDishFlavor = new JLabel("Dish flavor");
+		lblDishFlavor.setBounds(254, 0, 184, 26);
+		contentPane.add(lblDishFlavor);
+		
+		flavor_display = new JTextField();
+		flavor_display.setText((String) null);
+		flavor_display.setEditable(false);
+		flavor_display.setColumns(10);
+		flavor_display.setBounds(254, 22, 190, 26);
+		contentPane.add(flavor_display);
+		flavor_display.setText(f.getFlavor());
 			
 	}
 }
