@@ -393,7 +393,7 @@ public class MainMenu extends JFrame {
 				.addGap(0, 914, Short.MAX_VALUE)
 		);
 		gl_panel_menu.setVerticalGroup(
-			gl_panel_menu.createParallelGroup(Alignment.TRAILING)
+			gl_panel_menu.createParallelGroup(Alignment.LEADING)
 				.addGap(0, 820, Short.MAX_VALUE)
 		);
 		panel_menu.setLayout(gl_panel_menu);
@@ -419,28 +419,28 @@ public class MainMenu extends JFrame {
 			}
 					
 			JButton btnNewButton = new JButton(); //ERASE THE LINE IN THE PARENTHESES WHEN RUNNING (see below)
-			btnNewButton.setBackground(Color.LIGHT_GRAY);
 			GroupLayout gl_panel_menu = new GroupLayout(panel_menu);
+			JButton btnTest1 = new JButton("New button");
+			
+			JButton btnTest2 = new JButton("New button");
 			gl_panel_menu.setHorizontalGroup(
 				gl_panel_menu.createParallelGroup(Alignment.LEADING)
 					.addGroup(gl_panel_menu.createSequentialGroup()
-						.addGap(42)
-						.addComponent(btnNewButton)
-						.addContainerGap(787, Short.MAX_VALUE))
-			);
+
+			));
 			gl_panel_menu.setVerticalGroup(
 				gl_panel_menu.createParallelGroup(Alignment.TRAILING)
-					.addGroup(gl_panel_menu.createSequentialGroup()
-						.addContainerGap(709, Short.MAX_VALUE)
-						.addComponent(btnNewButton, GroupLayout.PREFERRED_SIZE, 74, GroupLayout.PREFERRED_SIZE)
-						.addGap(37))
-			);
+					.addGroup(Alignment.LEADING, gl_panel_menu.createSequentialGroup()
+			));
 			panel_menu.setLayout(gl_panel_menu);
 
+			
 			//newMenu.MenuSelections.get(j).getName()
 			btnNewButton.setBounds(x, y, 110, 200);
 			panel_menu.add(btnNewButton);
 			btnNewButton.addActionListener(new ActionListener() {
+				
+				
 				
 	            public void actionPerformed(ActionEvent e) {
 	            	ProductViewUI.main(k);
