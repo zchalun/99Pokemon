@@ -20,10 +20,12 @@ public class Food {
 		price = 1000000.00; //placeholder
 	}
 	
-	public Food (String name, double price)
+	public Food (String name, double price, String desc, String flavor)
 	{
 		this.name = name;
 		this.price = price;
+		this.desc = desc;
+		this.flavor = flavor;
 	}
 	
 	public String getName() {

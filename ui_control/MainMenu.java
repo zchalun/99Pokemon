@@ -419,8 +419,6 @@ public class MainMenu extends JFrame {
 			}
 					
 			JButton btnNewButton = new JButton(); //ERASE THE LINE IN THE PARENTHESES WHEN RUNNING (see below)
-			
-			//
 			btnNewButton.setBackground(Color.LIGHT_GRAY);
 			GroupLayout gl_panel_menu = new GroupLayout(panel_menu);
 			gl_panel_menu.setHorizontalGroup(
@@ -438,7 +436,7 @@ public class MainMenu extends JFrame {
 						.addGap(37))
 			);
 			panel_menu.setLayout(gl_panel_menu);
-			//
+
 			//newMenu.MenuSelections.get(j).getName()
 			btnNewButton.setBounds(x, y, 110, 200);
 			panel_menu.add(btnNewButton);
@@ -527,7 +525,20 @@ public class MainMenu extends JFrame {
 			    	//gets each food name and price
 			    	String name = item.get("Name").getS();
 			    	double price = Double.parseDouble(item.get("Price").getN());
-			    	Food food = new Food(name, price);
+			    	Menu aMenu = new Menu(); //new menu for loop
+  	                String desc = "";
+			    	String flavor = "";
+			    	
+			    	//setting desc and flavors for food
+			    	for (Food x : aMenu.MenuSelections)
+			    	{
+			    		if (x.getName().equals(item.get("Name").getS()))
+			    		{
+			    			desc = x.getDesc();
+			    			flavor = x.getFlavor();
+			    		}
+			    	}
+			    	Food food = new Food(name, price,desc,flavor);
 			    	
 			    	//adds food to menu
 			    	newMenu.MenuSelections.add(food);
